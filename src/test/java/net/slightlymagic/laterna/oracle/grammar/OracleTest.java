@@ -19,9 +19,7 @@ import java.io.StringWriter;
 import java.util.List;
 import java.util.Locale;
 
-import net.slightlymagic.laterna.oracle.OracleLexer;
-import net.slightlymagic.laterna.oracle.OracleParser;
-import net.slightlymagic.laterna.oracle.OracleParser.LineContext;
+import net.slightlymagic.laterna.oracle.grammar.OracleParser.LineContext;
 import net.slightlymagic.laterna.oracle.tools.Ability;
 import net.slightlymagic.laterna.oracle.tools.Card;
 
