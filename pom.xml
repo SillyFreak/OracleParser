@@ -2,11 +2,11 @@
  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
  <modelVersion>4.0.0</modelVersion>
 
- <groupId>template</groupId>
- <artifactId>template</artifactId>
+ <groupId>net.slightlymagic.laterna</groupId>
+ <artifactId>rules-parser</artifactId>
  <version>0.0.1-SNAPSHOT</version>
- <name>template</name>
- <description>template project</description>
+ <name>RulesParser</name>
+ <description>RulesParser</description>
  
  <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,7 +33,73 @@
       <target>1.7</target>
      </configuration>
     </plugin>
+    <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build 
+     itself. -->
+    <plugin>
+     <groupId>org.eclipse.m2e</groupId>
+     <artifactId>lifecycle-mapping</artifactId>
+     <version>1.0.0</version>
+     <configuration>
+      <lifecycleMappingMetadata>
+       <pluginExecutions>
+        <pluginExecution>
+         <pluginExecutionFilter>
+          <groupId>org.antlr</groupId>
+          <artifactId>antlr4-maven-plugin</artifactId>
+          <versionRange>[4.0,)</versionRange>
+          <goals>
+           <goal>antlr4</goal>
+          </goals>
+         </pluginExecutionFilter>
+         <action>
+          <ignore></ignore>
+         </action>
+        </pluginExecution>
+       </pluginExecutions>
+      </lifecycleMappingMetadata>
+     </configuration>
+    </plugin>
    </plugins>
   </pluginManagement>
+  <plugins>
+   <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>build-helper-maven-plugin</artifactId>
+    <version>1.7</version>
+    <executions>
+     <execution>
+      <goals>
+       <goal>add-source</goal>
+      </goals>
+      <configuration>
+       <sources>
+        <source>${basedir}}/src/main/antlr4</source>
+        <source>${project.build.directory}/generated-sources/antlr4</source>
+       </sources>
+      </configuration>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+    <groupId>org.antlr</groupId>
+    <artifactId>antlr4-maven-plugin</artifactId>
+    <version>4.0</version>
+    <executions>
+     <execution>
+      <goals>
+       <goal>antlr4</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+  </plugins>
  </build>
+ 
+ <dependencies>
+  <dependency>
+   <groupId>org.antlr</groupId>
+   <artifactId>antlr4</artifactId>
+   <version>4.0</version>
+  </dependency>
+ </dependencies>
 </project>
