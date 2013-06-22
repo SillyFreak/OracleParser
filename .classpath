@@ -6,13 +6,13 @@
    <attribute name="maven.pomderived" value="true" />
   </attributes>
  </classpathentry>
- <classpathentry excluding="**/*.*" kind="src" output="target/classes" path="src/main/resources">
+ <classpathentry excluding="**/*.java" kind="src" output="target/classes" path="src/main/resources">
   <attributes>
    <attribute name="optional" value="true" />
    <attribute name="maven.pomderived" value="true" />
   </attributes>
  </classpathentry>
- <classpathentry excluding="**/*.*" kind="src" output="target/classes" path="src/main/antlr4">
+ <classpathentry excluding="**/*.java" kind="src" output="target/classes" path="src/main/antlr4">
   <attributes>
    <attribute name="optional" value="true" />
    <attribute name="maven.pomderived" value="true" />
@@ -24,7 +24,7 @@
    <attribute name="maven.pomderived" value="true" />
   </attributes>
  </classpathentry>
- <classpathentry excluding="**/*.*" kind="src" output="target/test-classes" path="src/test/resources">
+ <classpathentry excluding="**/*.java" kind="src" output="target/test-classes" path="src/test/resources">
   <attributes>
    <attribute name="optional" value="true" />
    <attribute name="maven.pomderived" value="true" />
