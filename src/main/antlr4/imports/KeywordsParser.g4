@@ -4,16 +4,16 @@ keywordCost:
   MANA;
 
 keywordAbility:
-  simpleKeyword | mediumKeyword | complexKeyword;
+  simpleKeywordAbility | mediumKeywordAbility | complexKeywordAbility;
 
 //simple keywords:  just one word
 //medium keywords:  plus a number
 //complex keywords: anything else
 
-simpleKeyword:
+simpleKeywordAbility:
   //simple evergreen keywords
-  Deathtouch | Defender |
-  Flash | Flying |
+  Deathtouch | Defender | doubleStrike |
+  firstStrike | Flash | Flying |
   Haste |
   Intimidate |
   Lifelink |
@@ -23,7 +23,7 @@ simpleKeyword:
   Vigilance |
   
   //simple block keywords
-  Banding |
+  Banding | battleCry |
   Cascade | Changeling | Conspire | Convoke |
   Delve |
   Epic | Exalted |
@@ -31,39 +31,32 @@ simpleKeyword:
   Gravestorm |
   Haunt|Hideaway|Horsemanship|
   Infect|
+  livingWeapon |
   Persist | Phasing | Provoke |
   Rebound | Retrace |
-  Shadow | Storm | Sunburst |
+  Shadow | splitSecond | Storm | Sunburst |
+  totemArmor |
   Wither;
   
+mediumKeywordAbility:
+  mediumKeyword number;
+
 mediumKeyword:
   //medium evergreen keywords
-  Double Strike #DoubleStrike |
-  First Strike #FirstStrike |
   
   //medium block keywords
-  Absorb number #Absorb |
-  Amplify number #Amplify |
-  Annihilator number #Annihilator |
-  Battle Cry #BattleCry |
-  Bloodthirst number #Bloodthirst |
-  Bushido number #Bushido |
-  Devour number #Devour |
-  Dredge number #Dredge |
-  Fading number #Fading |
-  Frenzy number #Frenzy |
-  Graft number #Graft |
-  Living Weapon #LivingWeapon |
-  Modular number #Modular |
-  Poisonous number #Poisonous |
-  Rampage number #Rampage |
-  Ripple number #Ripple |
-  Soulshift number #Soulshift |
-  Split Second #SplitSecond |
-  Totem Armor #TotemArmor |
-  Vanishing number #Vanishing;
+  Absorb | Amplify | Annihilator |
+  Bloodthirst | Bushido |
+  Devour | Dredge |
+  Fading | Frenzy |
+  Graft |
+  Modular |
+  Poisonous |
+  Rampage | Ripple |
+  Soulshift |
+  Vanishing;
   
-complexKeyword:
+complexKeywordAbility:
   //complex evergreen keywords
 //  enchant |
   Equip keywordCost #Equip |
@@ -102,3 +95,11 @@ complexKeyword:
   Unearth keywordCost #Unearth// |
 //  typecycling |
   ;
+
+doubleStrike:	Double Strike;
+firstStrike:	First Strike;
+
+battleCry:		Battle Cry;
+livingWeapon:	Living Weapon;
+splitSecond:	Split Second;
+totemArmor:		Totem Armor;
