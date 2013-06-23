@@ -27,7 +27,7 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.TokenStream;
+import org.junit.Ignore;
 import org.junit.Test;
 
 
@@ -40,27 +40,30 @@ import org.junit.Test;
  * @author Clemens Koza
  */
 public class OracleTest {
-    private final OracleLexer  lexer;
-    private final OracleParser parser;
-    
-    {
-        lexer = new OracleLexer(null);
-        lexer.removeErrorListeners();
-        lexer.addErrorListener(new BailErrorListener());
-        TokenStream tokens = new CommonTokenStream(lexer);
-        
-        parser = new OracleParser(tokens);
-        parser.setErrorHandler(new BailErrorStrategy());
-    }
     
     private void process(String ability) throws Exception {
-        lexer.setInputStream(new ANTLRInputStream(ability.toLowerCase()));
+        OracleLexer lexer = new OracleLexer(new ANTLRInputStream(ability.toLowerCase()));
+        lexer.removeErrorListeners();
+        lexer.addErrorListener(new BailErrorListener());
+        
+        OracleParser parser = new OracleParser(new CommonTokenStream(lexer));
+        parser.removeErrorListeners();
+        parser.setErrorHandler(new BailErrorStrategy());
+        
         LineContext line = parser.line();
+        System.out.println(line.toStringTree(parser));
+    }
+    
+    @Test
+    @Ignore
+    public void testSomeAbilities() throws Exception {
+        process("Flying");
+        process("Double Strike");
+        System.out.println("OK");
     }
     
     @SuppressWarnings("unchecked")
     @Test(expected = AssertionError.class)
-//    @Ignore
     public void testAllAbilities() throws Exception {
         //results
         long time;
