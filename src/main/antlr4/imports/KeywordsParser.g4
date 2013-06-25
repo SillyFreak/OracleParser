@@ -3,70 +3,120 @@ parser grammar KeywordsParser;
 keywordCost:
   MANA;
 
-keywordAbility:
-  simpleKeywordAbility | mediumKeywordAbility | complexKeywordAbility;
-
 //simple keywords:  just one word
 //medium keywords:  plus a number
 //complex keywords: anything else
+keywordAbility:
 
-simpleKeywordAbility:
-  //simple evergreen keywords
-  Deathtouch | Defender | doubleStrike |
-  firstStrike | Flash | Flying |
-  Haste |
-  Intimidate |
-  Lifelink |
-  Reach |
-  Shroud |
-  Trample |
-  Vigilance |
+//simple evergreen keywords
+  Deathtouch #Deathtouch |
+  Defender #Defender |
+  Double Strike #DoubleStrike |
+ 
+  First Strike #FirstStrike |
+  Flash #Flash |
+  Flying #Flying |
+ 
+  Haste #Haste |
+ 
+  Intimidate #Intimidate |
+ 
+  Lifelink #Lifelink |
+ 
+  Reach #Reach |
+ 
+  Shroud #Shroud |
+ 
+  Trample #Trample |
+ 
+  Vigilance #Vigilance |
+ 
   
-  //simple block keywords
-  Banding | battleCry |
-  Cascade | Changeling | Conspire | Convoke |
-  Delve |
-  Epic | Exalted |
-  Fear | Flanking |
-  Gravestorm |
-  Haunt|Hideaway|Horsemanship|
-  Infect|
-  livingWeapon |
-  Persist | Phasing | Provoke |
-  Rebound | Retrace |
-  Shadow | splitSecond | Storm | Sunburst |
-  totemArmor |
-  Wither;
+//simple block keywords
+  Banding #Banding |
+  Battle Cry #BattleCry |
+ 
+  Cascade #Cascade |
+  Changeling #Changeling |
+  Conspire #Conspire |
+  Convoke #Convoke |
+ 
+  Delve #Delve |
+ 
+  Epic #Epic |
+  Exalted #Exalted |
+ 
+  Fear #Fear |
+  Flanking #Flanking |
+ 
+  Gravestorm #Gravestorm |
+ 
+  Haunt #Haunt |
+  Hideaway #Hideaway |
+  Horsemanship #Horsemanship |
+ 
+  Infect #Infect |
+ 
+  Living Weapon #LivingWeapon |
+ 
+  Persist #Persist |
+  Phasing #Phasing |
+  Provoke #Provoke |
+ 
+  Rebound #Rebound |
+  Retrace #Retrace |
+ 
+  Shadow #Shadow |
+  Split Second #SplitSecond |
+  Storm #Storm |
+  Sunburst #Sunburst |
+ 
+  Totem Armor #TotemArmor |
+ 
+  Wither #Wither |
   
-mediumKeywordAbility:
-  mediumKeyword number;
-
-mediumKeyword:
-  //medium evergreen keywords
   
-  //medium block keywords
-  Absorb | Amplify | Annihilator |
-  Bloodthirst | Bushido |
-  Devour | Dredge |
-  Fading | Frenzy |
-  Graft |
-  Modular |
-  Poisonous |
-  Rampage | Ripple |
-  Soulshift |
-  Vanishing;
+//medium evergreen keywords
   
-complexKeywordAbility:
-  //complex evergreen keywords
-//  enchant |
+//medium block keywords
+  Absorb number #Absorb |
+  Amplify number #Amplify |
+  Annihilator number #Annihilator |
+ 
+  Bloodthirst number #Bloodthirst |
+  Bushido number #Bushido |
+ 
+  Devour number #Devour |
+  Dredge number #Dredge |
+ 
+  Fading number #Fading |
+  Frenzy number #Frenzy |
+ 
+  Graft number #Graft |
+ 
+  Modular number #Modular |
+ 
+  Poisonous number #Poisonous |
+ 
+  Rampage number #Rampage |
+  Ripple number #Ripple |
+ 
+  Soulshift number #Soulshift |
+ 
+  Vanishing number #Vanishing |
+  
+  
+//complex evergreen keywords
+//  enchant #Enchant |
   Equip keywordCost #Equip |
-//  landwalk |
-//  protection |
+//  landwalk #Landwalk |
+//  protection #Protection |
   
-  //complex block keywords
-//  affinity |
+  
+//complex block keywords
+//  Affinity #Affinity |
   Aura Swap keywordCost #AuraSwap |
-//  bandsWith |
+//  Bands With #BandsWith |
   Buyback keywordCost #Buyback |
 //  champion: Champion someObjects -> ^(Champion someObjects);
   Cumulative Upkeep keywordCost #CumulativeUpkeep |
@@ -83,23 +133,15 @@ complexKeywordAbility:
   Morph keywordCost #Morph |
   Multikicker keywordCost #Multikicker |
   Ninjutsu keywordCost #Ninjutsu |
-//  offering |
+//  Offering #Offering |
   Prowl keywordCost #Prowl |
   Recover keywordCost #Recover |
 //  Reinforce number DASH activationCost PERIOD? #Reinforce |
   Replicate keywordCost #Replicate |
-//  splice |
+//  Splice Onto #Splice |
 //  Suspend number DASH activationCost PERIOD? #Suspend |
   Transfigure keywordCost #Transfigure |
   Transmute keywordCost #Transmute |
   Unearth keywordCost #Unearth// |
-//  typecycling |
+//  typecycling #Typecycling |
   ;
-
-doubleStrike:	Double Strike;
-firstStrike:	First Strike;
-
-battleCry:		Battle Cry;
-livingWeapon:	Living Weapon;
-splitSecond:	Split Second;
-totemArmor:		Totem Armor;

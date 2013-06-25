@@ -42,7 +42,9 @@ public class OracleParserTest {
         
         LineContext line = parser.line();
         
+        System.out.println(line.toStringTree(parser));
         ParseTreeWalker w = new ParseTreeWalker();
-        w.walk(new TestOracleListener(parser), line);
+        w.walk(new TraceOracleListener(), line);
+        System.out.println();
     }
 }
