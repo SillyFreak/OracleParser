@@ -4,9 +4,9 @@ action:
   drawCards PERIOD;
 
 activatedAbility:
-  activatedAbilityCost (COMMA activatedAbilityCost)* COLON action+;
+  activationCost (COMMA activationCost)* COLON action+;
 
-activatedAbilityCost:
+activationCost:
   TAP |
   UNTAP |
   MANA |
