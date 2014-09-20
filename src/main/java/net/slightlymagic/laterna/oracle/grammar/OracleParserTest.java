@@ -48,8 +48,8 @@ public class OracleParserTest {
     private static void process(List<Card> content) throws Exception {
         String datetime = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
         new File("reports").mkdirs();
-        try (PrintStream cards = new PrintStream("reports/" + datetime + "-cards.txt");
-                PrintStream abilities = new PrintStream("reports/" + datetime + "-abilities.txt");) {
+        try (PrintStream cards = new PrintStream("reports/cards-" + datetime + ".txt");
+                PrintStream abilities = new PrintStream("reports/abilities-" + datetime + ".txt");) {
             
             int cSucc = 0, cErr = 0;
             int aSucc = 0, aErr = 0;
