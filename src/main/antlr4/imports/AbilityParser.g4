@@ -4,6 +4,14 @@ action:
   EOF;
 
 activatedAbility:
+  activatedAbilityCost (COMMA activatedAbilityCost)* COLON (activatedAbilityEffect PERIOD)+;
+
+activatedAbilityCost:
+  TAP |
+  UNTAP |
+  MANA;
+
+activatedAbilityEffect:
   EOF;
 
 triggeredAbility:
