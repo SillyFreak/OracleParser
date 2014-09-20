@@ -19,6 +19,6 @@ number:
   VARIABLE;
 
 numberWord:
-  A | An |
+  A | An | VARIABLE |
   One | Two | Three | Four | Five |
   Six | Seven | Eight | Nine | Ten;
