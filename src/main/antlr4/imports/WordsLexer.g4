@@ -1,6 +1,12 @@
 lexer grammar WordsLexer;
 
 //colors
+White: 'white';
+Blue: 'blue';
+Black: 'black';
+Red: 'red';
+Green: 'green';
+
 Multicolor: 'multicolor';
 Colorless: 'colorless';
 

@@ -4,7 +4,7 @@ options {
   tokenVocab = OracleLexer;
 }
 
-import KeywordsParser, AbilityParser, EffectsParser;
+import KeywordsParser, AbilityParser, EffectsParser, QualityParser;
 
 line:
   (keywordAbility |
