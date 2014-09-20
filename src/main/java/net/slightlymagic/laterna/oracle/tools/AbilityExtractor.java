@@ -12,10 +12,12 @@ import static java.util.regex.Pattern.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -95,6 +97,22 @@ public class AbilityExtractor {
         }
         writeSer(new File(cardsSer), cards);
         writeTxt(new File(cardsTxt), cards);
+    }
+    
+    public static List<Card> readSer() throws IOException {
+        return readSer(new File(cardsSer));
+    }
+    
+    @SuppressWarnings("unchecked")
+    private static List<Card> readSer(File file) throws IOException {
+        try {
+            ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
+            List<Card> content = (List<Card>) is.readObject();
+            is.close();
+            return content;
+        } catch(ClassNotFoundException ex) {
+            throw new AssertionError(ex);
+        }
     }
     
     private static void writeSer(File file, List<Card> content) throws IOException {
