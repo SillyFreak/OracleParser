@@ -65,6 +65,8 @@ Bloodthirst: 'bloodthirst';
 Bushido: 'bushido';
 Buyback: 'buyback';
 Cant: 'can\'t';
+Card: 'card';
+Cards: 'cards';
 Cascade: 'cascade';
 Cast: 'cast';
 Champion: 'champion';
