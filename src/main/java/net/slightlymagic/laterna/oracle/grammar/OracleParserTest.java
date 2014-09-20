@@ -26,7 +26,6 @@ import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
-import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 
 /**
@@ -119,8 +118,5 @@ public class OracleParserTest {
         LineContext line = parse(ability);
         
         System.out.println(line.toStringTree(asList(OracleParser.ruleNames)));
-        ParseTreeWalker w = new ParseTreeWalker();
-        w.walk(new TraceOracleListener(), line);
-        System.out.println();
     }
 }
