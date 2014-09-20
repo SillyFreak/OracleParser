@@ -13,6 +13,9 @@ activationCost:
   drawCards;
 
 triggeredAbility:
+  trigger COMMA action+;
+
+trigger:
   EOF;
 
 staticAbility:
