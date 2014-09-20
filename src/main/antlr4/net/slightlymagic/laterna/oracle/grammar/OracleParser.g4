@@ -4,10 +4,15 @@ options {
   tokenVocab = OracleLexer;
 }
 
-import KeywordsParser;
+import KeywordsParser, AbilityParser;
 
 line:
-  keywordAbility EOF;
+  (keywordAbility |
+   activatedAbility |
+   triggeredAbility |
+   staticAbility |
+   action
+  ) EOF;
 
 number:
   NUMBER |

@@ -8,6 +8,8 @@ package net.slightlymagic.laterna.oracle.grammar;
 
 
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.AbsorbContext;
+import net.slightlymagic.laterna.oracle.grammar.OracleParser.ActionContext;
+import net.slightlymagic.laterna.oracle.grammar.OracleParser.ActivatedAbilityContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.AmplifyContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.AnnihilatorContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.AuraSwapContext;
@@ -80,12 +82,14 @@ import net.slightlymagic.laterna.oracle.grammar.OracleParser.ShadowContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.ShroudContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.SoulshiftContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.SplitSecondContext;
+import net.slightlymagic.laterna.oracle.grammar.OracleParser.StaticAbilityContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.StormContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.SunburstContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.TotemArmorContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.TrampleContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.TransfigureContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.TransmuteContext;
+import net.slightlymagic.laterna.oracle.grammar.OracleParser.TriggeredAbilityContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.UnearthContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.VanishingContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.VigilanceContext;
@@ -149,6 +153,38 @@ public class TraceOracleListener implements OracleParserListener {
     
     @Override
     public void exitKeywordAbility(KeywordAbilityContext ctx) {
+        trace(ctx);
+    }
+    
+    public void enterActivatedAbility(ActivatedAbilityContext ctx) {
+        trace(ctx);
+    }
+    
+    public void exitActivatedAbility(ActivatedAbilityContext ctx) {
+        trace(ctx);
+    }
+    
+    public void enterTriggeredAbility(TriggeredAbilityContext ctx) {
+        trace(ctx);
+    }
+    
+    public void exitTriggeredAbility(TriggeredAbilityContext ctx) {
+        trace(ctx);
+    }
+    
+    public void enterStaticAbility(StaticAbilityContext ctx) {
+        trace(ctx);
+    }
+    
+    public void exitStaticAbility(StaticAbilityContext ctx) {
+        trace(ctx);
+    }
+    
+    public void enterAction(ActionContext ctx) {
+        trace(ctx);
+    }
+    
+    public void exitAction(ActionContext ctx) {
         trace(ctx);
     }
     
