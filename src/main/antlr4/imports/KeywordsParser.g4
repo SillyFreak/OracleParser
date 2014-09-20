@@ -3,10 +3,13 @@ parser grammar KeywordsParser;
 keywordCost:
   MANA;
 
+keywordAbility:
+  keyword;
+
 //simple keywords:  just one word
 //medium keywords:  plus a number
 //complex keywords: anything else
-keywordAbility:
+keyword:
 
 //simple evergreen keywords
   Deathtouch #Deathtouch |

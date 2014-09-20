@@ -51,6 +51,7 @@ import net.slightlymagic.laterna.oracle.grammar.OracleParser.HideawayContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.HorsemanshipContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.InfectContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.IntimidateContext;
+import net.slightlymagic.laterna.oracle.grammar.OracleParser.KeywordAbilityContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.KeywordCostContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.KickerContext;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.LevelUpContext;
@@ -138,6 +139,16 @@ public class TraceOracleListener implements OracleParserListener {
     @Override
     public void exitEveryRule(ParserRuleContext ctx) {
         indent += 2;
+        trace(ctx);
+    }
+    
+    @Override
+    public void enterKeywordAbility(KeywordAbilityContext ctx) {
+        trace(ctx);
+    }
+    
+    @Override
+    public void exitKeywordAbility(KeywordAbilityContext ctx) {
         trace(ctx);
     }
     
