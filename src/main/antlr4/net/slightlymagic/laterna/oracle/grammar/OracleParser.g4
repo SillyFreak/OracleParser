@@ -17,3 +17,8 @@ line:
 number:
   NUMBER |
   VARIABLE;
+
+numberWord:
+  A | An |
+  One | Two | Three | Four | Five |
+  Six | Seven | Eight | Nine | Ten;

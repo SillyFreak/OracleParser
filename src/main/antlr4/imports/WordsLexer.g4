@@ -26,6 +26,18 @@ Controller: 'controller';
 You: 'you';
 Your: 'your';
 
+//numbers
+One: 'one';
+Two: 'two';
+Three: 'three';
+Four: 'four';
+Five: 'five';
+Six: 'six';
+Seven: 'seven';
+Eight: 'eight';
+Nine: 'nine';
+Ten: 'ten';
+
 //others
 A: 'a';
 Absorb: 'absorb';
