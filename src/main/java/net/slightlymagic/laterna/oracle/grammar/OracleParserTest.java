@@ -99,6 +99,9 @@ public class OracleParserTest {
             else ability.error = ex;
         } catch(RecognitionException ex) {
             ability.error = ex;
+        } catch(RuntimeException ex) {
+            System.err.println(ability.text);
+            throw ex;
         }
     }
     
