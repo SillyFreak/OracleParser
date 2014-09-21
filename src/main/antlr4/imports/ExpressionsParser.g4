@@ -17,7 +17,7 @@ number:
 singular:
   singularNumber |
   singularNumber Target |
-  Target;
+  Target | Each;
 
 plural:
   pluralNumber |

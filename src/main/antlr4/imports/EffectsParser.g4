@@ -6,6 +6,7 @@ effect:
   discardCards |
   drawCards |
   gainLife |
+  loseLife |
   sacrificePermanents;
 
 addMana:
@@ -39,7 +40,16 @@ drawCards:
   );
 
 gainLife:
-  You Gain number Life;
+  (singular3rdPlayerExpression Gains |
+   playerExpression Gain
+  )
+  number Life;
+
+loseLife:
+  (singular3rdPlayerExpression Loses |
+   playerExpression Lose
+  )
+  number Life;
 
 sacrificePermanents:
   (Sacrifice |
