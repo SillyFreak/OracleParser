@@ -14,24 +14,35 @@ pluralNumber:
 number:
   NUMBER | VARIABLE;
 
+singular:
+  singularNumber |
+  singularNumber Target |
+  Target;
+
+plural:
+  pluralNumber |
+  pluralNumber Target |
+  All | Each;
+
+
 singular3rdPlayerExpression:
-  Target (Player | Opponent);
+  singular (Player | Opponent);
 
 playerExpression:
   You |
-  All (Players | Opponents);
+  plural (Players | Opponents);
 
 singularCardExpression:
-  singularNumber colorQuality* cardtypeQuality* Card;
+  singular colorQuality* cardtypeQuality* Card;
 
 pluralCardExpression:
-  pluralNumber colorQuality* cardtypeQuality* Cards;
+  plural colorQuality* cardtypeQuality* Cards;
 
 singularPermanentExpression:
-  (singularNumber | Target) colorQuality* cardtypeQuality*
+  singular colorQuality* cardtypeQuality*
   (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent);
 
 pluralPermanentExpression:
-  (pluralNumber Target | All) colorQuality* cardtypeQuality*
+  plural colorQuality* cardtypeQuality*
   (Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */Permanents);
   
