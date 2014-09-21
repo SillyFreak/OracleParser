@@ -43,7 +43,13 @@ public class WordMapping {
         if(result == null) {
             result = fields.get((word.substring(0, 1).toUpperCase() + word.substring(1)).replaceAll(
                     "\\P{IsLetter}", "_"));
-            if(result == null) throw new IllegalArgumentException("unmatched word: " + word);
+            if(result == null) {
+                if(word.length() == 1 && "wubrg".indexOf(word.charAt(0)) != -1) {
+                    result = OracleLexer.MANA;
+                } else {
+                    throw new IllegalArgumentException("unmatched word: " + word);
+                }
+            }
             words.put(word, result);
         }
         return result;
