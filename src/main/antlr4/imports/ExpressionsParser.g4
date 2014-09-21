@@ -53,3 +53,13 @@ pluralObject:
 
 pluralObjectExpression:
   plural pluralObject;
+
+
+counterExpression:
+  singularCounterExpression | pluralCounterExpression;
+
+singularCounterExpression:
+  singular counterType Counter;
+
+pluralCounterExpression:
+  plural counterType Counters;

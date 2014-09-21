@@ -60,20 +60,14 @@ putCounter:
    singular3rdPlayerExpression Puts |
    playerExpression Put
   )
-  (singular counterType Counter |
-   plural counterType Counters
-  )
-  On objectExpression;
+  counterExpression On objectExpression;
 
 removeCounter:
   (Remove |
    /*singular3rdPlayerExpression Removes |*/
    playerExpression Remove
   )
-  (singular counterType Counter |
-   plural counterType Counters
-  )
-  From objectExpression;
+  counterExpression From objectExpression;
 
 sacrificePermanents:
   (Sacrifice |
