@@ -128,7 +128,7 @@ keyword:
   Entwine keywordCost #Entwine |
   Evoke keywordCost #Evoke |
   Flashback keywordCost #Flashback |
-//  forecast: Forecast DASH activatedAbility -> ^(Forecast activatedAbility);
+  Forecast DASH activatedAbility #Forecast |
   Fortify keywordCost #Fortify |
   Kicker keywordCost #Kicker |
   Level Up keywordCost #LevelUp |
@@ -139,10 +139,10 @@ keyword:
 //  Offering #Offering |
   Prowl keywordCost #Prowl |
   Recover keywordCost #Recover |
-//  Reinforce number DASH activationCost PERIOD? #Reinforce |
+  Reinforce number DASH activationCost PERIOD? #Reinforce |
   Replicate keywordCost #Replicate |
 //  Splice Onto #Splice |
-//  Suspend number DASH activationCost PERIOD? #Suspend |
+  Suspend number DASH activationCost PERIOD? #Suspend |
   Transfigure keywordCost #Transfigure |
   Transmute keywordCost #Transmute |
   Unearth keywordCost #Unearth// |
