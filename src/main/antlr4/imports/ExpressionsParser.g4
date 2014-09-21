@@ -25,10 +25,10 @@ plural:
   All | Each;
 
 
-singular3rdPlayerExpression:
+player3rdSubject:
   singular (Player | Opponent);
 
-playerExpression:
+playerSubject:
   You |
   plural (Players | Opponents);
 

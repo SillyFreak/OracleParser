@@ -17,61 +17,61 @@ addMana:
 
 counter:
   (Counter |
-   singular3rdPlayerExpression Counters |
-   playerExpression Counter
+   player3rdSubject Counters |
+   playerSubject Counter
   )
   objectExpression;
 
 destroyPermanents:
   (Destroy |
-   singular3rdPlayerExpression Destroys |
-   playerExpression Destroy
+   player3rdSubject Destroys |
+   playerSubject Destroy
   )
   objectExpression;
 
 discardCards:
   (Discard |
-   singular3rdPlayerExpression Discards |
-   playerExpression Discard
+   player3rdSubject Discards |
+   playerSubject Discard
   )
   objectExpression;
 
 drawCards:
   (Draw |
-   singular3rdPlayerExpression Draws |
-   playerExpression Draw
+   player3rdSubject Draws |
+   playerSubject Draw
   )
   (singularNumber Card | pluralNumber Cards);
 
 gainLife:
-  (singular3rdPlayerExpression Gains |
-   playerExpression Gain
+  (player3rdSubject Gains |
+   playerSubject Gain
   )
   number Life;
 
 loseLife:
-  (singular3rdPlayerExpression Loses |
-   playerExpression Lose
+  (player3rdSubject Loses |
+   playerSubject Lose
   )
   number Life;
 
 putCounter:
   (Put |
-   singular3rdPlayerExpression Puts |
-   playerExpression Put
+   player3rdSubject Puts |
+   playerSubject Put
   )
   counterExpression On objectExpression;
 
 removeCounter:
   (Remove |
-   /*singular3rdPlayerExpression Removes |*/
-   playerExpression Remove
+   /*player3rdSubject Removes |*/
+   playerSubject Remove
   )
   counterExpression From objectExpression;
 
 sacrificePermanents:
   (Sacrifice |
-   singular3rdPlayerExpression Sacrifices |
-   playerExpression Sacrifice
+   player3rdSubject Sacrifices |
+   playerSubject Sacrifice
   )
   objectExpression;
