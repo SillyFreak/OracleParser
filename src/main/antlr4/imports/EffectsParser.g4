@@ -2,6 +2,7 @@ parser grammar AbilityParser;
 
 effect:
   addMana |
+  counterEffect |
   destroyPermanents |
   discardCards |
   drawCards |
@@ -11,6 +12,15 @@ effect:
 
 addMana:
   Add MANA To Your Mana Pool;
+
+counterEffect:
+  (Counter |
+   singular3rdPlayerExpression Counters |
+   playerExpression Counter
+  )
+  (singularObjectExpression |
+   pluralObjectExpression
+  );
 
 destroyPermanents:
   (Destroy |
