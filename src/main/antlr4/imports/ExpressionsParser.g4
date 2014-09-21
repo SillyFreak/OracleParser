@@ -26,3 +26,12 @@ singularCardExpression:
 
 pluralCardExpression:
   pluralNumber colorQuality* cardtypeQuality* Cards;
+
+singularPermanentExpression:
+  Target colorQuality* cardtypeQuality*
+  (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent);
+
+pluralPermanentExpression:
+  (pluralNumber Target | All) colorQuality* cardtypeQuality*
+  (Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */Permanents);
+  
