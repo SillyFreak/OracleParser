@@ -33,6 +33,16 @@ playerSubject:
   plural (Players | Opponents);
 
 
+playerExpression:
+  singularPlayerExpression | pluralPlayerExpression;
+
+singularPlayerExpression:
+  singular (Player | Opponent);
+
+pluralPlayerExpression:
+  plural (Players | Opponents);
+
+
 objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
