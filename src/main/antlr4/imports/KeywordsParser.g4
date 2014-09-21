@@ -110,18 +110,14 @@ keyword:
   
   
 //complex evergreen keywords
-  Enchant (
-    colorQuality* cardtypeQuality* (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent) |
-    Player |
-    Opponent
-  ) #Enchant |
+  Enchant (singularPermanent | Player | Opponent) #Enchant |
   Equip keywordCost #Equip |
 //  landwalk #Landwalk |
 //  protection #Protection |
   
   
 //complex block keywords
-//  Affinity #Affinity |
+//  Affinity To #Affinity |
   Aura Swap keywordCost #AuraSwap |
 //  Bands With #BandsWith |
   Buyback keywordCost #Buyback |

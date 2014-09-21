@@ -38,11 +38,14 @@ singularCardExpression:
 pluralCardExpression:
   plural colorQuality* cardtypeQuality* Cards;
 
+singularPermanent:
+  colorQuality* cardtypeQuality* (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent);
+
 singularPermanentExpression:
-  singular colorQuality* cardtypeQuality*
-  (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent);
+  singular singularPermanent;
+
+pluralPermanent:
+  colorQuality* cardtypeQuality* (Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */Permanents);
 
 pluralPermanentExpression:
-  plural colorQuality* cardtypeQuality*
-  (Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */Permanents);
-  
+  plural pluralPermanent;
