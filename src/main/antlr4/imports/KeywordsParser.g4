@@ -110,7 +110,11 @@ keyword:
   
   
 //complex evergreen keywords
-//  enchant #Enchant |
+  Enchant (
+    colorQuality* cardtypeQuality* (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent) |
+    Player |
+    Opponent
+  ) #Enchant |
   Equip keywordCost #Equip |
 //  landwalk #Landwalk |
 //  protection #Protection |
