@@ -22,7 +22,7 @@ playerExpression:
   All (Players | Opponents);
 
 singularCardExpression:
-  singularNumber colorQuality? Card;
+  singularNumber colorQuality* cardtypeQuality* Card;
 
 pluralCardExpression:
-  pluralNumber colorQuality? Cards;
+  pluralNumber colorQuality* cardtypeQuality* Cards;
