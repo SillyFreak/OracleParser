@@ -9,11 +9,11 @@ colorQuality:
   noncolor |
   Colorless |
   Monocolored |
-  Multicolor;
+  Multicolored;
 
 color:
   White | Blue | Black | Red | Green;
 
 noncolor:
-  Non color;
+  Nonwhite | Nonblue | Nonblack | Nonred | Nongreen;
   
