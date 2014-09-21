@@ -33,19 +33,19 @@ playerExpression:
   plural (Players | Opponents);
 
 singularCardExpression:
-  singular colorQuality* cardtypeQuality* Card;
+  singular colorQuality* supertypeQuality* cardtypeQuality* Card;
 
 pluralCardExpression:
-  plural colorQuality* cardtypeQuality* Cards;
+  plural colorQuality* supertypeQuality* cardtypeQuality* Cards;
 
 singularPermanent:
-  colorQuality* cardtypeQuality* (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent);
+  colorQuality* supertypeQuality* cardtypeQuality* (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent);
 
 singularPermanentExpression:
   singular singularPermanent;
 
 pluralPermanent:
-  colorQuality* cardtypeQuality* (Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */Permanents);
+  colorQuality* supertypeQuality* cardtypeQuality* (Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */Permanents);
 
 pluralPermanentExpression:
   plural pluralPermanent;

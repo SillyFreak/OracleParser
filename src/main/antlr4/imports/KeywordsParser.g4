@@ -119,7 +119,7 @@ keyword:
 //complex block keywords
   Affinity For pluralPermanent #Affinity |
   Aura Swap keywordCost #AuraSwap |
-//  Bands With #BandsWith |
+  Bands With Other pluralPermanent #BandsWith |
   Buyback keywordCost #Buyback |
   Champion (singularPermanentExpression | pluralPermanentExpression) #Champion |
   Cumulative Upkeep keywordCost #CumulativeUpkeep |
@@ -136,7 +136,7 @@ keyword:
   Morph keywordCost #Morph |
   Multikicker keywordCost #Multikicker |
   Ninjutsu keywordCost #Ninjutsu |
-//  Offering #Offering |
+  singularPermanent Offering #Offering |
   Prowl keywordCost #Prowl |
   Recover keywordCost #Recover |
   Reinforce number DASH activationCost PERIOD? #Reinforce |

@@ -10,6 +10,15 @@ color:
 noncolor:
   Nonwhite | Nonblue | Nonblack | Nonred | Nongreen;
 
+supertypeQuality:
+  supertype | nonsupertype;
+
+supertype:
+  Basic | Legendary | /*Ongoing |*/ Snow /*| World*/;
+
+nonsupertype:
+  Nonbasic | Nonlegendary | /*Nonongoing |*/ Nonsnow /*| Nonworld*/;
+
 cardtypeQuality:
   cardtype | noncardtype;
 
