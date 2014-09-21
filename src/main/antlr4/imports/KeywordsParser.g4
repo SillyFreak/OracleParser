@@ -110,18 +110,18 @@ keyword:
   
   
 //complex evergreen keywords
-  Enchant (singularPermanent | Player | Opponent) #Enchant |
+  Enchant (singularObject | Player | Opponent) #Enchant |
   Equip keywordCost #Equip |
 //  landwalk #Landwalk |
 //  Protection From #Protection |
   
   
 //complex block keywords
-  Affinity For pluralPermanent #Affinity |
+  Affinity For pluralObject #Affinity |
   Aura Swap keywordCost #AuraSwap |
-  Bands With Other pluralPermanent #BandsWith |
+  Bands With Other pluralObject #BandsWith |
   Buyback keywordCost #Buyback |
-  Champion (singularPermanentExpression | pluralPermanentExpression) #Champion |
+  Champion (singularObjectExpression | pluralObjectExpression) #Champion |
   Cumulative Upkeep keywordCost #CumulativeUpkeep |
   Cycling keywordCost #Cycling |
   Echo keywordCost #Echo |
@@ -136,7 +136,7 @@ keyword:
   Morph keywordCost #Morph |
   Multikicker keywordCost #Multikicker |
   Ninjutsu keywordCost #Ninjutsu |
-  singularPermanent Offering #Offering |
+  singularObject Offering #Offering |
   Prowl keywordCost #Prowl |
   Recover keywordCost #Recover |
   Reinforce number DASH activationCost PERIOD? #Reinforce |

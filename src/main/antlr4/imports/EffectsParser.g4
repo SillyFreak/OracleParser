@@ -17,8 +17,8 @@ destroyPermanents:
    singular3rdPlayerExpression Destroys |
    playerExpression Destroy
   )
-  (singularPermanentExpression |
-   pluralPermanentExpression
+  (singularObjectExpression |
+   pluralObjectExpression
   );
 
 discardCards:
@@ -26,8 +26,8 @@ discardCards:
    singular3rdPlayerExpression Discards |
    playerExpression Discard
   )
-  (singularCardExpression |
-   pluralCardExpression
+  (singularObjectExpression |
+   pluralObjectExpression
   );
 
 drawCards:
@@ -56,6 +56,6 @@ sacrificePermanents:
    singular3rdPlayerExpression Sacrifices |
    playerExpression Sacrifice
   )
-  (singularPermanentExpression |
-   pluralPermanentExpression
+  (singularObjectExpression |
+   pluralObjectExpression
   );

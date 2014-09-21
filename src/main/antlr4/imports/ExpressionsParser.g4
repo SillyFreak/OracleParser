@@ -32,20 +32,20 @@ playerExpression:
   You |
   plural (Players | Opponents);
 
-singularCardExpression:
-  singular colorQuality* supertypeQuality* cardtypeQuality* Card;
+singularObject:
+  colorQuality* supertypeQuality* cardtypeQuality* (
+    Artifact | Creature | Enchantment | Land | Planeswalker |
+    Permanent | Card | Spell
+  );
 
-pluralCardExpression:
-  plural colorQuality* supertypeQuality* cardtypeQuality* Cards;
+singularObjectExpression:
+  singular singularObject;
 
-singularPermanent:
-  colorQuality* supertypeQuality* cardtypeQuality* (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent);
+pluralObject:
+  colorQuality* supertypeQuality* cardtypeQuality* (
+    Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */
+    Permanents | Cards | Spells
+  );
 
-singularPermanentExpression:
-  singular singularPermanent;
-
-pluralPermanent:
-  colorQuality* supertypeQuality* cardtypeQuality* (Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */Permanents);
-
-pluralPermanentExpression:
-  plural pluralPermanent;
+pluralObjectExpression:
+  plural pluralObject;
