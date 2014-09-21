@@ -1,14 +1,15 @@
 parser grammar ExpressionsParser;
 
-singularNumberExpression:
+singularNumber:
   A | An | One |
   (NUMBER {"1".equals(getRuleContext().getText())}?);
 
-pluralNumberExpression:
+pluralNumber:
   VARIABLE |
   (NUMBER {!"1".equals(getRuleContext().getText())}?) |
-  Two | Three | Four | Five |
-  Six | Seven | Eight | Nine | Ten;
+  Two | Three | Four | Five | Six |
+  Seven | Eight | Nine | Ten | Twelve |
+  Thirteen | Fifteen | Twenty;
 
 number:
   NUMBER | VARIABLE;

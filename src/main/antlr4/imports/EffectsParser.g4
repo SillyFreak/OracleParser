@@ -14,8 +14,8 @@ discardCards:
    singular3rdPlayerExpression Discards |
    playerExpression Discard
   )
-  (singularNumberExpression Card |
-   pluralNumberExpression Cards
+  (singularNumber Card |
+   pluralNumber Cards
   );
 
 drawCards:
@@ -23,8 +23,8 @@ drawCards:
    singular3rdPlayerExpression Draws |
    playerExpression Draw
   )
-  (singularNumberExpression Card |
-   pluralNumberExpression Cards
+  (singularNumber Card |
+   pluralNumber Cards
   );
 
 gainLife:
