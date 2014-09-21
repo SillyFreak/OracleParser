@@ -59,7 +59,7 @@ public class WordsGenerator {
         for(String w:words) {
             String id = (w.substring(0, 1).toUpperCase() + w.substring(1)).replaceAll("\\P{IsLetter}", "_");
             if(!ids.add(id)) System.err.println("duplicate id: " + id);
-            out.printf("%s: '%s';%n", id, w.replaceAll("'", "\\'"));
+            out.printf("%s: '%s';%n", id, w.replaceAll("'", "\\\\'"));
         }
     }
 }
