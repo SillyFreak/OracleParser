@@ -2,18 +2,20 @@ parser grammar AbilityParser;
 
 effect:
   addMana |
-  counterEffect |
+  counter |
   destroyPermanents |
   discardCards |
   drawCards |
   gainLife |
   loseLife |
+  putCounter |
+  removeCounter |
   sacrificePermanents;
 
 addMana:
   Add MANA To Your Mana Pool;
 
-counterEffect:
+counter:
   (Counter |
    singular3rdPlayerExpression Counters |
    playerExpression Counter
@@ -60,6 +62,32 @@ loseLife:
    playerExpression Lose
   )
   number Life;
+
+putCounter:
+  (Put |
+   singular3rdPlayerExpression Puts |
+   playerExpression Put
+  )
+  (singular counterType Counter |
+   plural counterType Counters
+  )
+  On
+  (singularObjectExpression |
+   pluralObjectExpression
+  );
+
+removeCounter:
+  (Remove |
+   /*singular3rdPlayerExpression Removes |*/
+   playerExpression Remove
+  )
+  (singular counterType Counter |
+   plural counterType Counters
+  )
+  From
+  (singularObjectExpression |
+   pluralObjectExpression
+  );
 
 sacrificePermanents:
   (Sacrifice |
