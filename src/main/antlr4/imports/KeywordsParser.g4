@@ -113,11 +113,11 @@ keyword:
   Enchant (singularPermanent | Player | Opponent) #Enchant |
   Equip keywordCost #Equip |
 //  landwalk #Landwalk |
-//  protection #Protection |
+//  Protection From #Protection |
   
   
 //complex block keywords
-//  Affinity To #Affinity |
+  Affinity For pluralPermanent #Affinity |
   Aura Swap keywordCost #AuraSwap |
 //  Bands With #BandsWith |
   Buyback keywordCost #Buyback |
