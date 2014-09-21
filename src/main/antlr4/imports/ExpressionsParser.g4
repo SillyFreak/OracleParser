@@ -28,7 +28,7 @@ pluralCardExpression:
   pluralNumber colorQuality* cardtypeQuality* Cards;
 
 singularPermanentExpression:
-  Target colorQuality* cardtypeQuality*
+  (singularNumber | Target) colorQuality* cardtypeQuality*
   (Artifact | Creature | Enchantment | Land | Planeswalker | Permanent);
 
 pluralPermanentExpression:

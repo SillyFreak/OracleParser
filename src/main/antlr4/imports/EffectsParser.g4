@@ -5,7 +5,8 @@ effect:
   destroyPermanents |
   discardCards |
   drawCards |
-  gainLife;
+  gainLife |
+  sacrificePermanents;
 
 addMana:
   Add MANA To Your Mana Pool;
@@ -39,3 +40,12 @@ drawCards:
 
 gainLife:
   You Gain number Life;
+
+sacrificePermanents:
+  (Sacrifice |
+   singular3rdPlayerExpression Sacrifices |
+   playerExpression Sacrifice
+  )
+  (singularPermanentExpression |
+   pluralPermanentExpression
+  );
