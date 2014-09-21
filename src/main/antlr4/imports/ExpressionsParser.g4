@@ -32,6 +32,10 @@ playerExpression:
   You |
   plural (Players | Opponents);
 
+
+objectExpression:
+  singularObjectExpression | pluralObjectExpression;
+
 singularObject:
   colorQuality* supertypeQuality* cardtypeQuality* (
     Artifact | Creature | Enchantment | Land | Planeswalker |

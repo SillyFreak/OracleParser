@@ -20,36 +20,28 @@ counter:
    singular3rdPlayerExpression Counters |
    playerExpression Counter
   )
-  (singularObjectExpression |
-   pluralObjectExpression
-  );
+  objectExpression;
 
 destroyPermanents:
   (Destroy |
    singular3rdPlayerExpression Destroys |
    playerExpression Destroy
   )
-  (singularObjectExpression |
-   pluralObjectExpression
-  );
+  objectExpression;
 
 discardCards:
   (Discard |
    singular3rdPlayerExpression Discards |
    playerExpression Discard
   )
-  (singularObjectExpression |
-   pluralObjectExpression
-  );
+  objectExpression;
 
 drawCards:
   (Draw |
    singular3rdPlayerExpression Draws |
    playerExpression Draw
   )
-  (singularNumber Card |
-   pluralNumber Cards
-  );
+  (singularNumber Card | pluralNumber Cards);
 
 gainLife:
   (singular3rdPlayerExpression Gains |
@@ -71,10 +63,7 @@ putCounter:
   (singular counterType Counter |
    plural counterType Counters
   )
-  On
-  (singularObjectExpression |
-   pluralObjectExpression
-  );
+  On objectExpression;
 
 removeCounter:
   (Remove |
@@ -84,16 +73,11 @@ removeCounter:
   (singular counterType Counter |
    plural counterType Counters
   )
-  From
-  (singularObjectExpression |
-   pluralObjectExpression
-  );
+  From objectExpression;
 
 sacrificePermanents:
   (Sacrifice |
    singular3rdPlayerExpression Sacrifices |
    playerExpression Sacrifice
   )
-  (singularObjectExpression |
-   pluralObjectExpression
-  );
+  objectExpression;
