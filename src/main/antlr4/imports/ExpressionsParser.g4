@@ -20,3 +20,9 @@ singular3rdPlayerExpression:
 playerExpression:
   You |
   All (Players | Opponents);
+
+singularCardExpression:
+  singularNumber colorQuality? Card;
+
+pluralCardExpression:
+  pluralNumber colorQuality? Cards;

@@ -14,8 +14,8 @@ discardCards:
    singular3rdPlayerExpression Discards |
    playerExpression Discard
   )
-  (singularNumber Card |
-   pluralNumber Cards
+  (singularCardExpression |
+   pluralCardExpression
   );
 
 drawCards:
