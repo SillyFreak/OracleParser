@@ -1,7 +1,7 @@
 parser grammar AbilityParser;
 
 action:
-  drawCards PERIOD;
+  effect PERIOD;
 
 activatedAbility:
   activationCost (COMMA activationCost)* COLON action+;
@@ -10,10 +10,10 @@ activationCost:
   TAP |
   UNTAP |
   MANA |
-  drawCards;
+  effect;
 
 triggeredAbility:
-  trigger COMMA action+;
+  trigger COMMA (effect PERIOD)+;
 
 trigger:
   EOF;
