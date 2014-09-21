@@ -12,3 +12,10 @@ pluralNumberExpression:
 
 number:
   NUMBER | VARIABLE;
+
+singular3rdPlayerExpression:
+  Target (Player | Opponent);
+
+playerExpression:
+  You |
+  All (Players | Opponents);
