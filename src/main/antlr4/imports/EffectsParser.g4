@@ -10,10 +10,10 @@ addMana:
   Add MANA To Your Mana Pool;
 
 discardCards:
-  Discard numberWord (Card | Cards);
+  Discard (singularNumberExpression Card | pluralNumberExpression Cards);
 
 drawCards:
-  Draw numberWord (Card | Cards);
+  Draw (singularNumberExpression Card | pluralNumberExpression Cards);
 
 gainLife:
   You Gain number Life;
