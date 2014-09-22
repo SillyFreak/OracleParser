@@ -46,20 +46,25 @@ pluralPlayerExpression:
 objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
+
+objectQuality:
+  colorQuality* supertypeQuality* cardtypeQuality*;
+objectNoun:
+  cardtypeQuality | Permanent | Card | Spell;
+
+//TODO check if the parse tree is as desired
 singularObject:
-  colorQuality* supertypeQuality* cardtypeQuality* (
-    Artifact | Creature | Enchantment | Land | Planeswalker |
-    Permanent | Card | Spell
-  );
+  colorQuality* supertypeQuality* cardtypeQuality* objectNoun |
+  objectQuality (((COMMA objectQuality)+ COMMA)? Or objectQuality)? objectNoun;
 
 singularObjectExpression:
   singular singularObject;
 
 pluralObject:
-  colorQuality* supertypeQuality* cardtypeQuality* (
-    Artifacts | Creatures | Enchantments | Lands | /*Planeswalkers | */
-    Permanents | Cards | Spells
-  );
+  colorQuality* supertypeQuality* cardtypeQuality*
+  (Artifacts | Creatures | Enchantments | Instants |
+   Lands | /*Planeswalkers | */ Schemes | /*Sorceries | */
+   Permanents | Cards | Spells);
 
 pluralObjectExpression:
   plural pluralObject;
