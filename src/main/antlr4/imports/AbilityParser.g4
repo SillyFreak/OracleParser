@@ -15,9 +15,6 @@ activationCost:
 triggeredAbility:
   trigger COMMA (effect PERIOD)+;
 
-trigger:
-  EOF;
-
 staticAbility:
   EOF;
   

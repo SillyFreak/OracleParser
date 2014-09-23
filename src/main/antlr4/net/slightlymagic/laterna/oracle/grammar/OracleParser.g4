@@ -10,7 +10,8 @@ import
 	EffectsParser,
 	ExpressionsParser,
 	KeywordsParser,
-	QualityParser;
+	QualityParser,
+	TriggerParser;
 
 line:
   (keywordAbility |
