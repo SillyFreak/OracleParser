@@ -1,5 +1,8 @@
 parser grammar QualityParser;
 
+objectQuality:
+  colorQuality* supertypeQuality* cardtypeQuality*?;
+
 colorQuality:
   color | noncolor |
   Colorless | Monocolored | Multicolored;

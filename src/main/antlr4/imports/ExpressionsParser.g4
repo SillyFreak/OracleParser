@@ -47,15 +47,12 @@ objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
 
-objectQuality:
-  colorQuality* supertypeQuality* cardtypeQuality*;
 objectNoun:
-  cardtypeQuality | Permanent | Card | Spell;
+  cardtype | Permanent | Card | Spell;
 
 //TODO check if the parse tree is as desired
 singularObject:
-  colorQuality* supertypeQuality* cardtypeQuality* objectNoun |
-  objectQuality (((COMMA objectQuality)+ COMMA)? Or objectQuality)? objectNoun;
+  (objectQuality (((COMMA objectQuality)+ COMMA)? Or objectQuality)?)? objectNoun;
 
 singularObjectExpression:
   singular singularObject;
