@@ -9,6 +9,7 @@ effect:
   drawCards |
   gainLife |
   loseLife |
+  payLife |
   putCounter |
   removeCounter |
   sacrificePermanents;
@@ -60,6 +61,13 @@ gainLife:
 loseLife:
   (player3rdSubject Loses |
    playerSubject Lose
+  )
+  number Life;
+
+payLife:
+  (Pay |
+   player3rdSubject Pays |
+   playerSubject Pay
   )
   number Life;
 
