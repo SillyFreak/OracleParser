@@ -5,7 +5,7 @@ trigger:
   ltbTrigger;
 
 etbTrigger:
-  When SELF Enters The Battlefield;
+  (When | Whenever) singularObjectExpression Enters The Battlefield;
 
 ltbTrigger:
-  When SELF Leaves The Battlefield;
+  (When | Whenever) singularObjectExpression Leaves The Battlefield;
