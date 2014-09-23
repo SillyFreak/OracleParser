@@ -12,7 +12,9 @@ effect:
   payLife |
   putCounter |
   removeCounter |
-  sacrificePermanents;
+  sacrificePermanents |
+  tap |
+  untap;
 
 addMana:
   Add MANA To Your Mana Pool;
@@ -89,5 +91,19 @@ sacrificePermanents:
   (Sacrifice |
    player3rdSubject Sacrifices |
    playerSubject Sacrifice
+  )
+  objectExpression;
+
+tap:
+  (Tap |
+   player3rdSubject Taps |
+   playerSubject Tap
+  )
+  objectExpression;
+
+untap:
+  (Untap |
+   player3rdSubject Untaps |
+   playerSubject Untap
   )
   objectExpression;
