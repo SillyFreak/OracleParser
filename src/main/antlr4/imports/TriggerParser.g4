@@ -2,10 +2,14 @@ parser grammar TriggerParser;
 
 trigger:
   etbTrigger |
-  ltbTrigger;
+  ltbTrigger |
+  phaseTrigger;
 
 etbTrigger:
   (When | Whenever) singularObjectExpression Enters The Battlefield;
 
 ltbTrigger:
   (When | Whenever) singularObjectExpression Leaves The Battlefield;
+
+phaseTrigger:
+  At The Beginning Of Your Upkeep;  
