@@ -58,7 +58,7 @@ singularObject:
   (objectQuality (((COMMA objectQuality)+ COMMA)? Or objectQuality)?)? singularObjectNoun;
 
 singularObjectExpression:
-  SELF | singular singularObject;
+  SELF | (Enchanted | Equipped | singular) singularObject;
 
 pluralObjectNoun:
   Artifacts | Creatures | Enchantments | Instants |
