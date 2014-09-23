@@ -1,10 +1,10 @@
 parser grammar AbilityParser;
 
 action:
-  effect PERIOD;
+  (effect PERIOD)+;
 
 activatedAbility:
-  activationCost (COMMA activationCost)* COLON action+;
+  activationCost (COMMA activationCost)* COLON (effect PERIOD)+;
 
 activationCost:
   TAP |
