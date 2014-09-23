@@ -47,24 +47,26 @@ objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
 
-objectNoun:
+singularObjectNoun:
   cardtype | Permanent | Card | Spell;
 
 //TODO check if the parse tree is as desired
 singularObject:
-  (objectQuality (((COMMA objectQuality)+ COMMA)? Or objectQuality)?)? objectNoun;
+  (objectQuality (((COMMA objectQuality)+ COMMA)? Or objectQuality)?)? singularObjectNoun;
 
 singularObjectExpression:
   singular singularObject;
 
+pluralObjectNoun:
+  Artifacts | Creatures | Enchantments | Instants |
+  Lands | /*Planeswalkers | */ Schemes | /*Sorceries | */
+  Permanents | Cards | Spells;
+
 pluralObject:
-  colorQuality* supertypeQuality* cardtypeQuality*
-  (Artifacts | Creatures | Enchantments | Instants |
-   Lands | /*Planeswalkers | */ Schemes | /*Sorceries | */
-   Permanents | Cards | Spells);
+  (objectQuality (((COMMA objectQuality)+ COMMA)? And objectQuality)?)? pluralObjectNoun;
 
 pluralObjectExpression:
-  plural pluralObject;
+  plural pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)?;
 
 
 counterExpression:

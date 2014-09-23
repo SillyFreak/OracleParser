@@ -45,11 +45,7 @@ public class OracleParserTest {
         process(AbilityExtractor.readSer());
         
 //        process(parse("Enchant creature"));
-        
-//        process("Double Strike");
-//        process("Defender");
-//        process("Bushido 2");
-//        process("cycling {2}");
+//        process(parse("Destroy two target artifacts and/or enchantments."));
     }
     
     private static void process(List<Card> content) throws Exception {
