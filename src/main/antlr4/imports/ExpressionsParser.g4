@@ -7,6 +7,9 @@ singularNumber:
 pluralNumber:
   VARIABLE |
   (NUMBER {!"1".equals(getRuleContext().getText())}?) |
+  pluralNumberWord;
+
+pluralNumberWord:
   Two | Three | Four | Five | Six |
   Seven | Eight | Nine | Ten | Twelve |
   Thirteen | Fifteen | Twenty;

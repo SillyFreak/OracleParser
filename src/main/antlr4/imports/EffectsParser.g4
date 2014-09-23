@@ -2,6 +2,7 @@ parser grammar AbilityParser;
 
 effect:
   addMana |
+  choose |
   counter |
   destroyPermanents |
   discardCards |
@@ -14,6 +15,13 @@ effect:
 
 addMana:
   Add MANA To Your Mana Pool;
+
+choose:
+  (Choose |
+   player3rdSubject Chooses |
+   playerSubject Choose
+  ) (One | pluralNumberWord) DASH
+  effect (SEMI Or effect)*;
 
 counter:
   (Counter |
