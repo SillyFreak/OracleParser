@@ -22,7 +22,7 @@ singular:
 plural:
   (Up To)? pluralNumber |
   (Up To)? pluralNumber Target |
-  All | Each;
+  All;
 
 
 player3rdSubject:
