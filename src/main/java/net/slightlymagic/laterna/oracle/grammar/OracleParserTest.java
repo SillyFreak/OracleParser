@@ -91,7 +91,7 @@ public class OracleParserTest {
     }
     
     private static String result(String type, int succ, int total) {
-        return format("%d of %d %s parsed: %.2f%%", succ, total, type, 1. * succ / total);
+        return format("%d of %d %s parsed: %.2f%%", succ, total, type, 100. * succ / total);
     }
     
     private static void process(Ability ability) {
