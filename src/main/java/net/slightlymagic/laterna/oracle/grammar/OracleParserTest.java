@@ -9,6 +9,7 @@ package net.slightlymagic.laterna.oracle.grammar;
 
 import static java.lang.String.*;
 import static java.util.Arrays.*;
+import static java.util.Collections.*;
 
 import java.io.File;
 import java.io.PrintStream;
@@ -24,6 +25,7 @@ import net.slightlymagic.laterna.oracle.tools.Card;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 
@@ -37,8 +39,13 @@ import org.antlr.v4.runtime.misc.ParseCancellationException;
  * @author Clemens Koza
  */
 public class OracleParserTest {
+    private static final List<String> ruleNames = unmodifiableList(asList(OracleParser.ruleNames));
+    
     public static void main(String[] args) throws Exception {
         process(AbilityExtractor.readSer());
+        
+//        process(parse("Enchant creature"));
+        
 //        process("Double Strike");
 //        process("Defender");
 //        process("Bushido 2");
@@ -105,7 +112,7 @@ public class OracleParserTest {
         }
     }
     
-    private static LineContext parse(String ability) throws RecognitionException {
+    private static OracleParser parser(String ability) throws RecognitionException {
         OracleLexer lexer = new OracleLexer(new ANTLRInputStream(ability.toLowerCase()));
         lexer.removeErrorListeners();
         lexer.addErrorListener(new BailErrorListener());
@@ -113,13 +120,15 @@ public class OracleParserTest {
         OracleParser parser = new OracleParser(new CommonTokenStream(lexer));
         parser.removeErrorListeners();
         parser.setErrorHandler(new BailErrorStrategy());
-        
-        return parser.line();
+        return parser;
     }
     
-    private static void process(String ability) throws Exception {
-        LineContext line = parse(ability);
-        
-        System.out.println(line.toStringTree(asList(OracleParser.ruleNames)));
+    private static LineContext parse(String ability) throws RecognitionException {
+        return parser(ability).line();
+    }
+    
+    private static void process(ParserRuleContext ctx) throws Exception {
+        System.out.println(ctx.toStringTree(ruleNames));
+        ctx.inspect(ruleNames);
     }
 }
