@@ -15,13 +15,13 @@ number:
   NUMBER | VARIABLE;
 
 singular:
-  singularNumber |
-  singularNumber Target |
+  (Up To)? singularNumber |
+  (Up To)? singularNumber Target |
   Target | Each;
 
 plural:
-  pluralNumber |
-  pluralNumber Target |
+  (Up To)? pluralNumber |
+  (Up To)? pluralNumber Target |
   All | Each;
 
 
