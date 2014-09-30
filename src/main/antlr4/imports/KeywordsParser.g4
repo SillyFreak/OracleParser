@@ -121,7 +121,7 @@ keyword:
   Aura Swap keywordCost #AuraSwap |
   Bands With Other pluralObject #BandsWith |
   Buyback keywordCost #Buyback |
-  Champion (singularObjectExpression | pluralObjectExpression) #Champion |
+  Champion objectExpression #Champion |
   Cumulative Upkeep keywordCost #CumulativeUpkeep |
   Cycling keywordCost #Cycling |
   Echo keywordCost #Echo |
