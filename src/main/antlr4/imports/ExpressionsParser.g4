@@ -55,7 +55,7 @@ singularObjectNoun:
 
 //TODO check if the parse tree is as desired
 singularObject:
-  (objectQuality (((COMMA objectQuality)+ COMMA)? Or objectQuality)?)? singularObjectNoun;
+  singularObjectQuality singularObjectNoun;
 
 singularObjectExpression:
   SELF | (Enchanted | Equipped | singular) singularObject;
@@ -66,7 +66,7 @@ pluralObjectNoun:
   Permanents | Cards | Spells;
 
 pluralObject:
-  (objectQuality (((COMMA objectQuality)+ COMMA)? And objectQuality)?)? pluralObjectNoun;
+  pluralObjectQuality pluralObjectNoun;
 
 pluralObjectExpression:
   plural pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)?;

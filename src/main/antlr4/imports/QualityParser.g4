@@ -1,5 +1,11 @@
 parser grammar QualityParser;
 
+singularObjectQuality:
+  (objectQuality (((COMMA objectQuality)+ COMMA)? Or objectQuality)?)?;
+
+pluralObjectQuality:
+  (objectQuality (((COMMA objectQuality)+ COMMA)? And objectQuality)?)?;
+
 objectQuality:
   colorQuality* supertypeQuality* cardtypeQuality*?;
 
