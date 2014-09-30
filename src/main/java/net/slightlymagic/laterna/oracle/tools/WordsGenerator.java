@@ -15,6 +15,8 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import net.slightlymagic.laterna.oracle.grammar.WordMapping;
+
 
 /**
  * <p>
@@ -58,7 +60,7 @@ public class WordsGenerator {
             out.println("tokens {");
             Set<String> ids = new TreeSet<String>();
             for(String w:words) {
-                String id = (w.substring(0, 1).toUpperCase() + w.substring(1)).replaceAll("\\P{IsLetter}", "_");
+                String id = WordMapping.getIdForWord(w);
 //                String str = w.replaceAll("'", "\\\\'");
                 if(!ids.add(id)) System.err.println("duplicate id: " + id);
 //                out.printf("%s: '%s';%n", id, str);

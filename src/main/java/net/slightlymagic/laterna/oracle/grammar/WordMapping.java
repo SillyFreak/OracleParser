@@ -41,8 +41,7 @@ public class WordMapping {
     public static int getTokenTypeForWord(String word) {
         Integer result = words.get(word);
         if(result == null) {
-            result = fields.get((word.substring(0, 1).toUpperCase() + word.substring(1)).replaceAll(
-                    "\\P{IsLetter}", "_"));
+            result = fields.get(getIdForWord(word));
             if(result == null) {
                 if(word.length() == 1 && "wubrg".indexOf(word.charAt(0)) != -1) {
                     result = OracleLexer.MANA;
@@ -53,5 +52,9 @@ public class WordMapping {
             words.put(word, result);
         }
         return result;
+    }
+    
+    public static String getIdForWord(String word) {
+        return (word.substring(0, 1).toUpperCase() + word.substring(1)).replaceAll("\\P{IsLetter}", "_");
     }
 }
