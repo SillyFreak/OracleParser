@@ -1,5 +1,29 @@
 parser grammar KeywordsParser;
 
+fromPluralObjectQuality:
+  From objectQuality |
+  From objectQuality And From objectQuality |
+  From objectQuality COMMA (From objectQuality COMMA)+ And From objectQuality;
+
+fromPluralObject:
+  From pluralObjectQuality? pluralObjectNoun;
+
+fromPluralObjectList:
+  fromPluralObject (((COMMA fromPluralObject)+ COMMA)? And (SLASH Or)? fromPluralObject)?;
+
+
+forPluralObjectQuality:
+  For objectQuality |
+  For objectQuality And For objectQuality |
+  For objectQuality COMMA (For objectQuality COMMA)+ And For objectQuality;
+
+forPluralObject:
+  For pluralObjectQuality? pluralObjectNoun;
+
+forPluralObjectList:
+  forPluralObject (((COMMA forPluralObject)+ COMMA)? And (SLASH Or)? forPluralObject)?;
+
+
 keywordCost:
   MANA;
 
@@ -113,11 +137,11 @@ keyword:
   Enchant (singularObjectList | Player | Opponent) #Enchant |
   Equip keywordCost #Equip |
 //  landwalk #Landwalk |
-  Protection From (pluralObjectList | pluralObjectQuality) #Protection |
+  Protection (fromPluralObjectList | fromPluralObjectQuality) #Protection |
   
   
 //complex block keywords
-  Affinity For pluralObjectList #Affinity |
+  Affinity forPluralObjectList #Affinity |
   Aura Swap keywordCost #AuraSwap |
   Bands With Other pluralObjectList #BandsWith |
   Buyback keywordCost #Buyback |
