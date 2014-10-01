@@ -113,7 +113,7 @@ keyword:
   Enchant (singularObjectList | Player | Opponent) #Enchant |
   Equip keywordCost #Equip |
 //  landwalk #Landwalk |
-  Protection From pluralObjectList #Protection |
+  Protection From (pluralObjectList | pluralObjectQuality) #Protection |
   
   
 //complex block keywords
