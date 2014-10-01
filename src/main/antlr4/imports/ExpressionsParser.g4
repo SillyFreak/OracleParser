@@ -57,8 +57,11 @@ singularObjectNoun:
 singularObject:
   singularObjectQuality singularObjectNoun;
 
+singularObjectList:
+  singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)?;
+
 singularObjectExpression:
-  SELF | (Enchanted | Equipped | singular) singularObject;
+  SELF | (Enchanted | Equipped | singular) singularObjectList;
 
 pluralObjectNoun:
   Artifacts | Creatures | Enchantments | Instants |
@@ -68,8 +71,11 @@ pluralObjectNoun:
 pluralObject:
   pluralObjectQuality pluralObjectNoun;
 
+pluralObjectList:
+  pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)?;
+
 pluralObjectExpression:
-  plural pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)?;
+  plural pluralObjectList;
 
 
 counterExpression:

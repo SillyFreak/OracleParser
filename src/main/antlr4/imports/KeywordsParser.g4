@@ -110,16 +110,16 @@ keyword:
   
   
 //complex evergreen keywords
-  Enchant (singularObject | Player | Opponent) #Enchant |
+  Enchant (singularObjectList | Player | Opponent) #Enchant |
   Equip keywordCost #Equip |
 //  landwalk #Landwalk |
-  Protection From pluralObject #Protection |
+  Protection From pluralObjectList #Protection |
   
   
 //complex block keywords
-  Affinity For pluralObject #Affinity |
+  Affinity For pluralObjectList #Affinity |
   Aura Swap keywordCost #AuraSwap |
-  Bands With Other pluralObject #BandsWith |
+  Bands With Other pluralObjectList #BandsWith |
   Buyback keywordCost #Buyback |
   Champion objectExpression #Champion |
   Cumulative Upkeep keywordCost #CumulativeUpkeep |
