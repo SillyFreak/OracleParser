@@ -13,7 +13,9 @@ pluralObjectQuality:
   objectQuality COMMA (objectQuality COMMA)+ And objectQuality;
 
 objectQuality:
-  colorQuality* supertypeQuality* cardtypeQuality*?;
+  cardtypeQuality+? |
+  supertypeQuality+ cardtypeQuality*? |
+  colorQuality+ supertypeQuality* cardtypeQuality*?;
 
 colorQuality:
   color | noncolor |
