@@ -16,7 +16,4 @@ triggeredAbility:
   trigger COMMA (oneShotEffect PERIOD)+;
 
 staticAbility:
-  abilityPump;
-
-abilityPump:
-  objectExpression (Have | Has) keywordAbility PERIOD;
+  continuousEffect;

@@ -1,7 +1,7 @@
 parser grammar CounterParser;
 
 counterType:
-  ptCounter |
+  ptPump |
   Age | Aim | Arrowhead | Awakening |
   Blaze | Blood | Bribery |
   Carrion | Charge | Corpse | Credit | Cube | Currency |
@@ -23,8 +23,3 @@ counterType:
   Theft | Tide | Time | Tower | Training | Trap | Treasure |
   Velocity | Verse | Vitality |
   Wage | Winch | Wind | Wish;
-
-ptCounter:
-  (NUMBER | (PLUS|MINUS)? VARIABLE)
-  SLASH
-  (NUMBER | (PLUS|MINUS)? VARIABLE);

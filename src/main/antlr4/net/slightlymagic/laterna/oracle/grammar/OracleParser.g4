@@ -6,6 +6,7 @@ options {
 
 import
 	AbilityParser,
+	ContinuousEffectsParser,
 	CounterParser,
 	ExpressionsParser,
 	KeywordsParser,
@@ -20,3 +21,8 @@ line:
    staticAbility |
    action
   ) EOF;
+
+ptPump:
+  (NUMBER | (PLUS|MINUS)? VARIABLE)
+  SLASH
+  (NUMBER | (PLUS|MINUS)? VARIABLE);
