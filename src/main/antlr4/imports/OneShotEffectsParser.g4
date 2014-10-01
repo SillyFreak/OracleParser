@@ -1,6 +1,6 @@
-parser grammar AbilityParser;
+parser grammar OneShotEffectsParser;
 
-effect:
+oneShotEffect:
   addMana |
   choose |
   counter |
@@ -24,7 +24,7 @@ choose:
    player3rdSubject Chooses |
    playerSubject Choose
   ) (One | pluralNumberWord) DASH
-  effect (SEMI Or effect)*;
+  oneShotEffect (SEMI Or oneShotEffect)*;
 
 counter:
   (Counter |

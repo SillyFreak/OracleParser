@@ -7,9 +7,9 @@ options {
 import
 	AbilityParser,
 	CounterParser,
-	EffectsParser,
 	ExpressionsParser,
 	KeywordsParser,
+	OneShotEffectsParser,
 	QualityParser,
 	TriggerParser;
 

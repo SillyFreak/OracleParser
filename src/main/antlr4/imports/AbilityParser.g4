@@ -1,19 +1,19 @@
 parser grammar AbilityParser;
 
 action:
-  (effect PERIOD)+;
+  (oneShotEffect PERIOD)+;
 
 activatedAbility:
-  activationCost (COMMA activationCost)* COLON (effect PERIOD)+;
+  activationCost (COMMA activationCost)* COLON (oneShotEffect PERIOD)+;
 
 activationCost:
   TAP |
   UNTAP |
   MANA |
-  effect;
+  oneShotEffect;
 
 triggeredAbility:
-  trigger COMMA (effect PERIOD)+;
+  trigger COMMA (oneShotEffect PERIOD)+;
 
 staticAbility:
   abilityPump;
