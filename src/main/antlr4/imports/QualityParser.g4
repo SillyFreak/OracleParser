@@ -1,13 +1,11 @@
 parser grammar QualityParser;
 
 singularObjectQuality:
-  |
   objectQuality |
   objectQuality Or objectQuality |
   objectQuality COMMA (objectQuality COMMA)+ Or objectQuality;
 
 pluralObjectQuality:
-  |
   objectQuality |
   objectQuality And objectQuality |
   objectQuality COMMA (objectQuality COMMA)+ And objectQuality;

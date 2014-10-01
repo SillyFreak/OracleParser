@@ -55,7 +55,7 @@ singularObjectNoun:
 
 //TODO check if the parse tree is as desired
 singularObject:
-  singularObjectQuality singularObjectNoun;
+  singularObjectQuality? singularObjectNoun;
 
 singularObjectList:
   singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)?;
@@ -69,7 +69,7 @@ pluralObjectNoun:
   Permanents | Cards | Spells;
 
 pluralObject:
-  pluralObjectQuality pluralObjectNoun;
+  pluralObjectQuality? pluralObjectNoun;
 
 pluralObjectList:
   pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)?;
