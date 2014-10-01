@@ -14,7 +14,7 @@ import
 	TriggerParser;
 
 line:
-  (keywordAbility |
+  (keywordAbility (COMMA keywordAbility)* |
    activatedAbility |
    triggeredAbility |
    staticAbility |
