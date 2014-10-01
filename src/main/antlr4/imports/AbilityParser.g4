@@ -16,5 +16,7 @@ triggeredAbility:
   trigger COMMA (effect PERIOD)+;
 
 staticAbility:
-  EOF;
-  
+  abilityPump;
+
+abilityPump:
+  objectExpression (Have | Has) keywordAbility PERIOD;

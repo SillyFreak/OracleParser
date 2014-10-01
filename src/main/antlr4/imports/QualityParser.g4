@@ -46,4 +46,3 @@ noncardtype:
   Nonartifact | Noncreature | Nonenchantment | Nonland;
 //  Noninstant Nonphenomenon Nonplane Nonplaneswalker
 //  Nonscheme Nonsorcery Nontribal Nonvanguard
-  
