@@ -17,7 +17,7 @@ objectQuality:
 
 colorQuality:
   color | noncolor |
-  Colorless | Monocolored | Multicolored;
+  Colored | Colorless | Monocolored | Multicolored;
 
 color:
   White | Blue | Black | Red | Green;
