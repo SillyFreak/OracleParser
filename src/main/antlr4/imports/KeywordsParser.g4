@@ -136,7 +136,7 @@ keyword:
 //complex evergreen keywords
   Enchant (singularObjectList | Player | Opponent) #Enchant |
   Equip keywordCost #Equip |
-//  landwalk #Landwalk |
+  objectQuality? (Plainswalk | Islandwalk | Swampwalk | Mountainwalk | Forestwalk | Landwalk | Desertwalk) #Landwalk |
   Protection (fromPluralObjectList | fromPluralObjectQuality) #Protection |
   
   
