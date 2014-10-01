@@ -9,6 +9,7 @@ package net.slightlymagic.laterna.oracle.tools;
 
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -59,12 +60,13 @@ public class WordsGenerator {
             out.println();
             out.println("tokens {");
             Set<String> ids = new TreeSet<String>();
-            for(String w:words) {
+            for(Iterator<String> it = words.iterator(); it.hasNext();) {
+                String w = it.next();
                 String id = WordMapping.getIdForWord(w);
 //                String str = w.replaceAll("'", "\\\\'");
                 if(!ids.add(id)) System.err.println("duplicate id: " + id);
 //                out.printf("%s: '%s';%n", id, str);
-                out.printf("  %s; //%s%n", id, w);
+                out.printf("  %s%s //%s%n", id, it.hasNext()? ',':' ', w);
             }
             out.println("}");
         }
