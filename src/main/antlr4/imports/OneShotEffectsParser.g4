@@ -1,8 +1,12 @@
 parser grammar OneShotEffectsParser;
 
 oneShotEffect:
-  addMana |
+  and |
   choose |
+  oneShotEffect0;
+
+oneShotEffect0:
+  addMana |
   counter |
   destroyPermanents |
   discardCards |
@@ -17,15 +21,19 @@ oneShotEffect:
   tap |
   untap;
 
-addMana:
-  Add MANA To Your Mana Pool;
+and:
+  oneShotEffect0 And oneShotEffect0;
 
 choose:
   (Choose |
    player3rdSubject Chooses |
    playerSubject Choose
   ) (One | pluralNumberWord) DASH
-  oneShotEffect (SEMI Or oneShotEffect)*;
+  oneShotEffect0 (SEMI Or oneShotEffect0)*;
+
+
+addMana:
+  Add MANA To Your Mana Pool;
 
 counter:
   (Counter |
