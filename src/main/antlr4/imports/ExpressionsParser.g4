@@ -54,7 +54,7 @@ controllerSpecifier:
   (playerSubject Control | player3rdSubject Controls);
 
 singularObjectNoun:
-  cardtype | Permanent | Card | Spell;
+  cardtype | Permanent | Token | Source | Card | Spell;
 
 //TODO check if the parse tree is as desired
 singularObject:
@@ -69,7 +69,7 @@ singularObjectExpression:
 pluralObjectNoun:
   Artifacts | Creatures | Enchantments | Instants |
   Lands | /*Planeswalkers | */ Schemes | /*Sorceries | */
-  Permanents | Cards | Spells;
+  Permanents | Tokens | Sources | Cards | Spells;
 
 pluralObject:
   Other? pluralObjectQuality? pluralObjectNoun;
