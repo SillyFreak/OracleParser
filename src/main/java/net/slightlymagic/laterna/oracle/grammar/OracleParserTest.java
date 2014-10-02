@@ -109,7 +109,8 @@ public class OracleParserTest {
     }
     
     private static OracleParser parser(String ability) throws RecognitionException {
-        OracleLexer lexer = new OracleLexer(new ANTLRInputStream(ability.toLowerCase()));
+        OracleLexer lexer = new OracleLexer(
+                new ANTLRInputStream(ability.toLowerCase().replaceAll("\\.\"", ".\".")));
         lexer.removeErrorListeners();
         lexer.addErrorListener(new BailErrorListener());
         

@@ -6,11 +6,14 @@ continuousEffect:
 pumpEffect_pt:
   (Get | Gets) ptPump;
 
+pumpEffect_ability:
+  keywordAbility | QUOTED;
+
 pumpEffect_keyword:
   (Have | Has | Gain | Gains) (
-    keywordAbility |
-    keywordAbility (And | Or) keywordAbility |
-    keywordAbility COMMA (keywordAbility COMMA)+ (And | Or) keywordAbility
+    pumpEffect_ability |
+    pumpEffect_ability (And | Or) pumpEffect_ability |
+    pumpEffect_ability COMMA (pumpEffect_ability COMMA)+ (And | Or) pumpEffect_ability
   );
 
 pumpEffect:
