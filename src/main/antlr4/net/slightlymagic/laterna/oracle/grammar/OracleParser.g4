@@ -8,6 +8,7 @@ import
 	AbilityParser,
 	ContinuousEffectsParser,
 	CounterParser,
+	DurationParser,
 	ExpressionsParser,
 	KeywordsParser,
 	OneShotEffectsParser,
