@@ -14,5 +14,5 @@ pumpEffect_keyword:
   );
 
 pumpEffect:
-  objectExpression pumpEffect_keyword PERIOD |
-  objectExpression pumpEffect_pt (And pumpEffect_keyword)? PERIOD;
+  objectExpression pumpEffect_keyword |
+  objectExpression pumpEffect_pt (And pumpEffect_keyword)?;

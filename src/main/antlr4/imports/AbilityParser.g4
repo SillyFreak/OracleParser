@@ -16,4 +16,4 @@ triggeredAbility:
   trigger COMMA (oneShotEffect PERIOD)+;
 
 staticAbility:
-  continuousEffect;
+  continuousEffect PERIOD;
