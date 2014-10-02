@@ -50,6 +50,9 @@ objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
 
+controllerSpecifier:
+  (playerSubject Control | player3rdSubject Controls);
+
 singularObjectNoun:
   cardtype | Permanent | Card | Spell;
 
@@ -58,7 +61,7 @@ singularObject:
   singularObjectQuality? singularObjectNoun;
 
 singularObjectList:
-  singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)?;
+  singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)? controllerSpecifier?;
 
 singularObjectExpression:
   SELF | (Enchanted | Equipped | singular) singularObjectList;
@@ -72,7 +75,7 @@ pluralObject:
   Other? pluralObjectQuality? pluralObjectNoun;
 
 pluralObjectList:
-  pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)?;
+  pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? controllerSpecifier?;
 
 pluralObjectExpression:
   plural pluralObjectList;
