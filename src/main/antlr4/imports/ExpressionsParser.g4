@@ -69,7 +69,7 @@ pluralObjectNoun:
   Permanents | Cards | Spells;
 
 pluralObject:
-  pluralObjectQuality? pluralObjectNoun;
+  Other? pluralObjectQuality? pluralObjectNoun;
 
 pluralObjectList:
   pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)?;
