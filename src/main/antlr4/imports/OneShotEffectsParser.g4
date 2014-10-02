@@ -9,6 +9,7 @@ oneShotEffect:
   drawCards |
   gainLife |
   loseLife |
+  oneShotContinuous |
   payLife |
   putCounter |
   removeCounter |
@@ -65,6 +66,11 @@ loseLife:
    playerSubject Lose
   )
   number Life;
+
+oneShotContinuous:
+  continuousEffect |
+  duration COMMA continuousEffect |
+  continuousEffect duration;
 
 payLife:
   (Pay |
