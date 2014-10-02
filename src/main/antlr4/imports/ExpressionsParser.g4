@@ -20,12 +20,14 @@ number:
 singular:
   (Up To)? singularNumber |
   (Up To)? singularNumber Target |
-  Target | Each;
+  Another |
+  Another? Target |
+  Each Other?;
 
 plural:
-  (Up To)? pluralNumber |
-  (Up To)? pluralNumber Target |
-  All;
+  (Up To)? pluralNumber Other? |
+  (Up To)? pluralNumber Other? Target |
+  All | Other |;
 
 
 player3rdSubject:

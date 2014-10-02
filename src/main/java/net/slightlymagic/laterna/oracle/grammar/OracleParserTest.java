@@ -47,7 +47,7 @@ public class OracleParserTest {
     public static void main(String[] args) throws Exception {
         process(AbilityExtractor.readSer());
         
-//        process(parse("{T}, Remove a counter from a permanent you control: Choose one — Put a charge counter on target artifact; or put a +1/+1 counter on target creature."));
+//        process(parse("Creatures you control have flying, first strike, vigilance, trample, haste, and protection from black and from red."));
 //        process(parse("Destroy two target artifacts and/or enchantments."));
     }
     
