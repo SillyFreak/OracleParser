@@ -22,12 +22,13 @@ singular:
   (Up To)? singularNumber Target |
   Another |
   Another? Target |
-  Each Other?;
+  Each Other?|
+  This | That;
 
 plural:
   (Up To)? pluralNumber Other? |
   (Up To)? pluralNumber Other? Target |
-  All | Other |;
+  All Other? | Other | These | Those |;
 
 
 player3rdSubject:
