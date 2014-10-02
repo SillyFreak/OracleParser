@@ -28,6 +28,9 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
+import org.antlr.v4.runtime.tree.TerminalNode;
 
 
 /**
@@ -96,14 +99,31 @@ public class OracleParserTest {
     
     private static void process(Ability ability) {
         try {
-            parse(ability.text);
+            process(ability.text);
         } catch(ParseCancellationException ex) {
             if(ex.getCause() instanceof Exception) ability.error = (Exception) ex.getCause();
             else ability.error = ex;
         } catch(RecognitionException ex) {
             ability.error = ex;
+        }
+    }
+    
+    private static void process(String ability) throws RecognitionException {
+        try {
+            ParseTree t = parse(ability);
+            new ParseTreeWalker().walk(new OracleParserBaseListener() {
+                @Override
+                public void visitTerminal(TerminalNode node) {
+                    if(node.getSymbol().getType() != OracleParser.QUOTED) return;
+                    String ability = node.getSymbol().getText();
+                    ability = ability.substring(1, ability.length() - 1);
+                    process(ability);
+                }
+            }, t);
+        } catch(ParseCancellationException | RecognitionException ex) {
+            throw ex;
         } catch(RuntimeException ex) {
-            System.err.println(ability.text);
+            System.err.println(ability);
             throw ex;
         }
     }
