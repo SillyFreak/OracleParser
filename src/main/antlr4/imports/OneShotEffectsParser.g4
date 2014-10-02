@@ -17,6 +17,7 @@ oneShotEffect0:
   payLife |
   putCounter |
   removeCounter |
+  returnToHand |
   sacrificePermanents |
   tap |
   untap;
@@ -100,6 +101,15 @@ removeCounter:
    playerSubject Remove
   )
   counterExpression From objectExpression;
+
+returnToHand:
+  (Return |
+   player3rdSubject Returns |
+   playerSubject Return
+  )
+  (singularObjectExpression To Its Owner_s Hand |
+   pluralObjectExpression To Their Owners_ Hands
+  );
 
 sacrificePermanents:
   (Sacrifice |
