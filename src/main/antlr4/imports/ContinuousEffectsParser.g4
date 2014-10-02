@@ -1,11 +1,18 @@
 parser grammar ContinuousEffectsParser;
 
 continuousEffect:
-  abilityPumpEffect |
-  ptPumpEffect;
+  pumpEffect;
 
-abilityPumpEffect:
-  objectExpression (Have | Has) keywordAbility PERIOD;
+pumpEffect_pt:
+  (Get | Gets) ptPump;
 
-ptPumpEffect:
-  objectExpression (Get | Gets) ptPump PERIOD;
+pumpEffect_keyword:
+  (Have | Has | Gain | Gains) (
+    keywordAbility |
+    keywordAbility (And | Or) keywordAbility |
+    keywordAbility COMMA (keywordAbility COMMA)+ (And | Or) keywordAbility
+  );
+
+pumpEffect:
+  objectExpression pumpEffect_keyword PERIOD |
+  objectExpression pumpEffect_pt (And pumpEffect_keyword)? PERIOD;
