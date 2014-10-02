@@ -85,7 +85,7 @@ counterExpression:
   singularCounterExpression | pluralCounterExpression;
 
 singularCounterExpression:
-  singular counterType Counter;
+  singular counterType? Counter;
 
 pluralCounterExpression:
-  plural counterType Counters;
+  plural counterType? Counters;
