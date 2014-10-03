@@ -32,7 +32,7 @@ plural:
 
 
 player3rdSubject:
-  singular (Player | Opponent);
+  singular (Player | Opponent) | He Or She;
 
 playerSubject:
   You |
