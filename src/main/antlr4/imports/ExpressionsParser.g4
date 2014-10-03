@@ -3,16 +3,16 @@ parser grammar ExpressionsParser;
 import NumeralParser;
 
 singular:
-  (Up To)? singularNumber |
-  (Up To)? singularNumber Target |
+  (Up To)? article_sg |
+  (Up To)? article_sg Target |
   Another |
   Another? Target |
   Each Other?|
   This | That;
 
 plural:
-  (Up To)? pluralNumber Other? |
-  (Up To)? pluralNumber Other? Target |
+  (Up To)? article_pl Other? |
+  (Up To)? article_pl Other? Target |
   All Other? | Other | Those |;
 
 
