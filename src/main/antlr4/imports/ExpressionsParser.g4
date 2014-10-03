@@ -1,21 +1,6 @@
 parser grammar ExpressionsParser;
 
-singularNumber:
-  A | An | One |
-  (NUMBER {"1".equals(getRuleContext().getText())}?);
-
-pluralNumber:
-  VARIABLE |
-  (NUMBER {!"1".equals(getRuleContext().getText())}?) |
-  pluralNumberWord;
-
-pluralNumberWord:
-  Two | Three | Four | Five | Six |
-  Seven | Eight | Nine | Ten | Twelve |
-  Thirteen | Fifteen | Twenty;
-
-number:
-  NUMBER | VARIABLE;
+import NumeralParser;
 
 singular:
   (Up To)? singularNumber |
@@ -28,7 +13,7 @@ singular:
 plural:
   (Up To)? pluralNumber Other? |
   (Up To)? pluralNumber Other? Target |
-  All Other? | Other | These | Those |;
+  All Other? | Other | Those |;
 
 
 player3rdSubject:

@@ -12,7 +12,7 @@ choose:
   (Choose |
    player3rdSubject Chooses |
    playerSubject Choose
-  ) (One | pluralNumberWord) DASH
+  ) numberWord DASH
   oneShotEffect0 (SEMI Or oneShotEffect0)*;
 
 
