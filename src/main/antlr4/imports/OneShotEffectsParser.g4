@@ -5,6 +5,17 @@ oneShotEffect:
   choose |
   oneShotEffect0;
 
+and:
+  oneShotEffect0 And oneShotEffect0;
+
+choose:
+  (Choose |
+   player3rdSubject Chooses |
+   playerSubject Choose
+  ) (One | pluralNumberWord) DASH
+  oneShotEffect0 (SEMI Or oneShotEffect0)*;
+
+
 oneShotEffect0:
   addMana |
   counter |
@@ -21,16 +32,6 @@ oneShotEffect0:
   sacrificePermanents |
   tap |
   untap;
-
-and:
-  oneShotEffect0 And oneShotEffect0;
-
-choose:
-  (Choose |
-   player3rdSubject Chooses |
-   playerSubject Choose
-  ) (One | pluralNumberWord) DASH
-  oneShotEffect0 (SEMI Or oneShotEffect0)*;
 
 
 addMana:
