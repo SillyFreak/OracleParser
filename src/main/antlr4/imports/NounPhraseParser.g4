@@ -4,17 +4,21 @@ determiner_sg:
 	A | An | Each Other? |
 	Another | (Up To)? numeral_sg Other? |
 	(Another | (Up To)? numeral_sg Other? |) Target |
-	This | That;
+	determiner_sg1_possessive | determiner_sp2_possessive | determiner_sg3_possessive |
+	determiner_sg_demonstrative;
 determiner_pl:
 	Other | All Other? |
 	(Up To)? numeral_pl Other? |
 	(Up To)? numeral_pl Other? Target |
-	Those;
+	determiner_pl1_possessive | determiner_sp2_possessive | determiner_pl3_possessive |
+	determiner_pl_demonstrative;
 determiner_sg1_possessive:	My;
 determiner_sp2_possessive:	Your;
 determiner_sg3_possessive:	His | Her | Its | Their | His Or Her;
 determiner_pl1_possessive:	Our;
 determiner_pl3_possessive:	Their;
+determiner_sg_demonstrative:	pronoun_sg_demonstrative;
+determiner_pl_demonstrative:	pronoun_pl_demonstrative;
 
 pronoun_sg1_nominative:	I;
 pronoun_sp2_nominative:	You;
@@ -37,3 +41,5 @@ pronoun_sp2_possessive:	Yours;
 pronoun_sg3_possessive:	His | Hers | Its | Theirs | His Or Hers;
 pronoun_pl1_possessive:	Ours;
 pronoun_pl3_possessive:	Theirs;
+pronoun_sg_demonstrative:	This | That;
+pronoun_pl_demonstrative:	These | Those;
