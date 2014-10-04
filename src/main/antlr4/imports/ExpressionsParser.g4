@@ -5,10 +5,10 @@ import
 	NumeralParser;
 
 
-player3rdSubject:
+subject_sg3:
   nounPhrase_sg3;
 
-playerSubject:
+subject_other:
   nounPhrase_sg1 | nounPhrase_sg2 | nounPhrase_pl;
 
 objectExpression:

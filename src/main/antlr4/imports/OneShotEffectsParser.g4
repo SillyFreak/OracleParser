@@ -10,8 +10,8 @@ and:
 
 choose:
   (Choose |
-   player3rdSubject Chooses |
-   playerSubject Choose
+   subject_sg3 Chooses |
+   subject_other Choose
   ) numberWord DASH
   oneShotEffect0 (SEMI Or oneShotEffect0)*;
 
@@ -39,41 +39,41 @@ addMana:
 
 counter:
   (Counter |
-   player3rdSubject Counters |
-   playerSubject Counter
+   subject_sg3 Counters |
+   subject_other Counter
   )
   objectExpression;
 
 destroyPermanents:
   (Destroy |
-   player3rdSubject Destroys |
-   playerSubject Destroy
+   subject_sg3 Destroys |
+   subject_other Destroy
   )
   objectExpression;
 
 discardCards:
   (Discard |
-   player3rdSubject Discards |
-   playerSubject Discard
+   subject_sg3 Discards |
+   subject_other Discard
   )
   objectExpression;
 
 drawCards:
   (Draw |
-   player3rdSubject Draws |
-   playerSubject Draw
+   subject_sg3 Draws |
+   subject_other Draw
   )
   (A Card | numeral_pl Cards);
 
 gainLife:
-  (player3rdSubject Gains |
-   playerSubject Gain
+  (subject_sg3 Gains |
+   subject_other Gain
   )
   number Life;
 
 loseLife:
-  (player3rdSubject Loses |
-   playerSubject Lose
+  (subject_sg3 Loses |
+   subject_other Lose
   )
   number Life;
 
@@ -84,29 +84,29 @@ oneShotContinuous:
 
 payLife:
   (Pay |
-   player3rdSubject Pays |
-   playerSubject Pay
+   subject_sg3 Pays |
+   subject_other Pay
   )
   number Life;
 
 putCounter:
   (Put |
-   player3rdSubject Puts |
-   playerSubject Put
+   subject_sg3 Puts |
+   subject_other Put
   )
   counterExpression On objectExpression;
 
 removeCounter:
   (Remove |
-   /*player3rdSubject Removes |*/
-   playerSubject Remove
+   /*subject_sg3 Removes |*/
+   subject_other Remove
   )
   counterExpression From objectExpression;
 
 returnToHand:
   (Return |
-   player3rdSubject Returns |
-   playerSubject Return
+   subject_sg3 Returns |
+   subject_other Return
   )
   (singularObjectExpression To Its Owner_s Hand |
    pluralObjectExpression To Their Owners_ Hands
@@ -114,21 +114,21 @@ returnToHand:
 
 sacrificePermanents:
   (Sacrifice |
-   player3rdSubject Sacrifices |
-   playerSubject Sacrifice
+   subject_sg3 Sacrifices |
+   subject_other Sacrifice
   )
   objectExpression;
 
 tap:
   (Tap |
-   player3rdSubject Taps |
-   playerSubject Tap
+   subject_sg3 Taps |
+   subject_other Tap
   )
   objectExpression;
 
 untap:
   (Untap |
-   player3rdSubject Untaps |
-   playerSubject Untap
+   subject_sg3 Untaps |
+   subject_other Untap
   )
   objectExpression;
