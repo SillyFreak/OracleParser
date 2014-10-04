@@ -6,21 +6,20 @@ import
 
 
 player3rdSubject:
-  singular (Player | Opponent) | He Or She;
+  determiner_sg (Player | Opponent) | He Or She;
 
 playerSubject:
-  You |
-  plural (Players | Opponents);
+  determiner_pl? (Players | Opponents) | You;
 
 
 playerExpression:
   singularPlayerExpression | pluralPlayerExpression;
 
 singularPlayerExpression:
-  singular (Player | Opponent);
+  determiner_sg (Player | Opponent);
 
 pluralPlayerExpression:
-  plural (Players | Opponents);
+  determiner_pl? (Players | Opponents);
 
 
 objectExpression:
@@ -41,7 +40,7 @@ singularObjectList:
   singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)? controllerSpecifier?;
 
 singularObjectExpression:
-  SELF | (Enchanted | Equipped | singular) singularObjectList;
+  SELF | (Enchanted | Equipped | determiner_sg) singularObjectList;
 
 pluralObjectNoun:
   Artifacts | Creatures | Enchantments | Instants |
@@ -55,14 +54,14 @@ pluralObjectList:
   pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? controllerSpecifier?;
 
 pluralObjectExpression:
-  plural pluralObjectList;
+  determiner_pl? pluralObjectList;
 
 
 counterExpression:
   singularCounterExpression | pluralCounterExpression;
 
 singularCounterExpression:
-  singular counterType? Counter;
+  determiner_sg counterType? Counter;
 
 pluralCounterExpression:
-  plural counterType? Counters;
+  determiner_pl? counterType? Counters;

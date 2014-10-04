@@ -10,9 +10,3 @@ determiner_pl:
 	(Up To)? numeral_pl Other? |
 	(Up To)? numeral_pl Other? Target |
 	Those;
-
-singular:
-  determiner_sg;
-
-plural:
-  determiner_pl |;
