@@ -2,6 +2,7 @@ parser grammar ExpressionsParser;
 
 import
 	NumeralParser,
+	PostmodifierParser,
 	PremodifierParser,
 	PronounParser;
 
@@ -27,9 +28,6 @@ objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
 
-controllerSpecifier:
-  (playerSubject Control | player3rdSubject Controls);
-
 singularObjectNoun:
   cardtype | Permanent | Token | Source | Card | Spell;
 
@@ -38,7 +36,7 @@ singularObject:
   premodifier_sg? singularObjectNoun;
 
 singularObjectList:
-  singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)? controllerSpecifier?;
+  singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)? postmodifier?;
 
 singularObjectExpression:
   SELF | (Enchanted | Equipped | determiner_sg) singularObjectList;
@@ -52,7 +50,7 @@ pluralObject:
   Other? premodifier_pl? pluralObjectNoun;
 
 pluralObjectList:
-  pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? controllerSpecifier?;
+  pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? postmodifier?;
 
 pluralObjectExpression:
   determiner_pl? pluralObjectList;
