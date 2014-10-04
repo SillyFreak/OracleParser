@@ -7,12 +7,14 @@ import
 
 noun_sg:
   Player | Opponent |
-  cardtype | Permanent | Token | Source | Card | Spell;
+  cardtype | Permanent | Token | Source | Card | Spell |
+  counterType? Counter;
 noun_pl:
   Players | Opponents |
   Artifacts | Creatures | Enchantments | Instants |
   Lands | Planeswalkers | Schemes | Sorceries |
-  Permanents | Tokens | Sources | Cards | Spells;
+  Permanents | Tokens | Sources | Cards | Spells |
+  counterType? Counters;
 noun_sg_possessive:
   Player_s | Opponent_s |
     Permanent_s | Token_s | Source_s | Card_s | Spell_s;

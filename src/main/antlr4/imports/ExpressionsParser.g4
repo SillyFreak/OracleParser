@@ -20,12 +20,5 @@ singularObjectExpression:
 pluralObjectExpression:
   nounPhrase_pl (((COMMA nounPhrase_pl)+ COMMA)? And (SLASH Or)? nounPhrase_pl)? postmodifier?;
 
-
 counterExpression:
-  singularCounterExpression | pluralCounterExpression;
-
-singularCounterExpression:
-  determiner_sg counterType? Counter;
-
-pluralCounterExpression:
-  determiner_pl? counterType? Counters;
+  nounPhrase;
