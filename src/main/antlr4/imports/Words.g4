@@ -780,6 +780,7 @@ tokens {
   Permanent, //permanent
   Permanent_s, //permanent's
   Permanents, //permanents
+  Permanents_, //permanents'
   Persist, //persist
   Pest, //pest
   Petal, //petal
@@ -986,12 +987,14 @@ tokens {
   Source, //source
   Source_s, //source's
   Sources, //sources
+  Sources_, //sources'
   Sovereign, //sovereign
   Spark, //spark
   Spawn, //spawn
   Spell, //spell
   Spell_s, //spell's
   Spells, //spells
+  Spells_, //spells'
   Spend, //spend
   Spent, //spent
   Sphinx, //sphinx
@@ -1088,7 +1091,9 @@ tokens {
   Times, //times
   To, //to
   Token, //token
+  Token_s, //token's
   Tokens, //tokens
+  Tokens_, //tokens'
   Tombspawn, //tombspawn
   Top, //top
   Total, //total

@@ -1,27 +1,25 @@
 parser grammar ExpressionsParser;
 
 import
-	NumeralParser,
-	PostmodifierParser,
-	PremodifierParser,
-	PronounParser;
+	NounPhraseParser,
+	NumeralParser;
 
 
 player3rdSubject:
-  determiner_sg (Player | Opponent) | He Or She;
+  nounPhrase_sg3;
 
 playerSubject:
-  determiner_pl? (Players | Opponents) | You;
+  nounPhrase_sg1 | nounPhrase_sg2 | nounPhrase_pl;
 
 
 playerExpression:
   singularPlayerExpression | pluralPlayerExpression;
 
 singularPlayerExpression:
-  determiner_sg (Player | Opponent);
+  nounPhrase_sg;
 
 pluralPlayerExpression:
-  determiner_pl? (Players | Opponents);
+  nounPhrase_pl;
 
 
 objectExpression:
@@ -33,13 +31,13 @@ singularObjectNoun:
 
 //TODO check if the parse tree is as desired
 singularObject:
-  premodifier_sg? singularObjectNoun;
+  nounPhrase_sg;
 
 singularObjectList:
   singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)? postmodifier?;
 
 singularObjectExpression:
-  SELF | (Enchanted | Equipped | determiner_sg) singularObjectList;
+  nounPhrase_sg;
 
 pluralObjectNoun:
   Artifacts | Creatures | Enchantments | Instants |
@@ -47,13 +45,13 @@ pluralObjectNoun:
   Permanents | Tokens | Sources | Cards | Spells;
 
 pluralObject:
-  Other? premodifier_pl? pluralObjectNoun;
+  nounPhrase_pl;
 
 pluralObjectList:
   pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? postmodifier?;
 
 pluralObjectExpression:
-  determiner_pl? pluralObjectList;
+  nounPhrase_pl;
 
 
 counterExpression:
