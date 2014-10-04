@@ -21,6 +21,16 @@ determiner_pl3_possessive:	Their;
 determiner_sg_demonstrative:	pronoun_sg_demonstrative;
 determiner_pl_demonstrative:	pronoun_pl_demonstrative;
 
+pronoun_sg:	pronoun_sg1 | pronoun_sg2 | pronoun_sg3;
+pronoun_pl:	pronoun_pl1 | pronoun_pl2 | pronoun_pl3;
+
+pronoun_sg1:	pronoun_sg1_nominative | pronoun_sg1_oblique | pronoun_sg1_reflexive | pronoun_sg1_possessive | pronoun_sg_demonstrative;
+pronoun_sg2:	pronoun_sp2_nominative | pronoun_sp2_oblique | pronoun_sg2_reflexive | pronoun_sp2_possessive | pronoun_sg_demonstrative;
+pronoun_sg3:	pronoun_sg3_nominative | pronoun_sg3_oblique | pronoun_sg3_reflexive | pronoun_sg3_possessive | pronoun_sg_demonstrative;
+pronoun_pl1:	pronoun_pl1_nominative | pronoun_pl1_oblique | pronoun_pl1_reflexive | pronoun_pl1_possessive | pronoun_pl_demonstrative;
+pronoun_pl2:	pronoun_sp2_nominative | pronoun_sp2_oblique | pronoun_pl2_reflexive | pronoun_sp2_possessive | pronoun_pl_demonstrative;
+pronoun_pl3:	pronoun_pl3_nominative | pronoun_pl3_oblique | pronoun_pl3_reflexive | pronoun_pl3_possessive | pronoun_pl_demonstrative;
+
 pronoun_sg1_nominative:	I;
 pronoun_sp2_nominative:	You;
 pronoun_sg3_nominative:	He | She | It | They | He Or She | SELF;
