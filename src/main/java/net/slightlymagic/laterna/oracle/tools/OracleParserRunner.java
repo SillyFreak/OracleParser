@@ -55,8 +55,14 @@ public class OracleParserRunner {
     private static final List<String> ruleNames = unmodifiableList(asList(OracleParser.ruleNames));
     private static final int          nThreads  = 8;
     
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws RecognitionException, IOException, InterruptedException {
+        parseAll();
         
+//        process(parse("Other creatures you control with flying get +0/+1."));
+//        process(parse("Destroy two target artifacts and/or enchantments."));
+    }
+    
+    private static void parseAll() throws IOException, InterruptedException {
         OracleParserRunner r = new OracleParserRunner(nThreads);
         Oracle oracle = AbilityExtractor.readSer();
         
@@ -179,7 +185,7 @@ public class OracleParserRunner {
         return parser(ability).line();
     }
     
-    private static void process(ParserRuleContext ctx) throws Exception {
+    private static void process(ParserRuleContext ctx) {
         System.out.println(ctx.toStringTree(ruleNames));
         ctx.inspect(ruleNames);
     }
