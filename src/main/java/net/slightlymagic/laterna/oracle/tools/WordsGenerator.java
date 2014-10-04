@@ -10,13 +10,13 @@ package net.slightlymagic.laterna.oracle.tools;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import net.slightlymagic.laterna.oracle.grammar.WordMapping;
+import net.slightlymagic.laterna.oracle.tools.Oracle.Ability;
 
 
 /**
@@ -31,16 +31,11 @@ public class WordsGenerator {
     private static Pattern word = Pattern.compile("(~'s)|(\\{\\w+(?:/\\w+)*\\})|(\\p{IsLetter}+(?:'\\p{IsLetter}+)*'?)");
     
     public static void main(String[] args) throws IOException {
-        List<Card> content = AbilityExtractor.readSer();
+        Oracle content = AbilityExtractor.readSer();
         Set<String> words = new TreeSet<String>();
         StringBuffer sb = new StringBuffer();
-        for(Card c:content) {
-            for(Ability a:c.abilities) {
-                a.num++;
-                if(a.num == 0 && a.text.length() > 1) {
-                    matchWords(words, sb, a.text, false);
-                }
-            }
+        for(Ability a:content.abilities.values()) {
+            matchWords(words, sb, a.text, false);
         }
         matchExtras(words, sb);
         
