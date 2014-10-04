@@ -1,10 +1,10 @@
 /**
- * OracleParserTest.java
+ * OracleParserRunner.java
  * 
- * Created on 23.06.2013
+ * Created on 04.10.2014
  */
 
-package net.slightlymagic.laterna.oracle.grammar;
+package net.slightlymagic.laterna.oracle.tools;
 
 
 import static java.lang.String.*;
@@ -12,15 +12,25 @@ import static java.util.Arrays.*;
 import static java.util.Collections.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
+import net.slightlymagic.laterna.oracle.grammar.BailErrorListener;
+import net.slightlymagic.laterna.oracle.grammar.OracleLexer;
+import net.slightlymagic.laterna.oracle.grammar.OracleParser;
 import net.slightlymagic.laterna.oracle.grammar.OracleParser.LineContext;
-import net.slightlymagic.laterna.oracle.tools.Ability;
-import net.slightlymagic.laterna.oracle.tools.AbilityExtractor;
-import net.slightlymagic.laterna.oracle.tools.Card;
+import net.slightlymagic.laterna.oracle.grammar.OracleParserBaseListener;
+import net.slightlymagic.laterna.oracle.tools.Oracle.Ability;
+import net.slightlymagic.laterna.oracle.tools.Oracle.AbilityInstance;
+import net.slightlymagic.laterna.oracle.tools.Oracle.Card;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.BailErrorStrategy;
@@ -35,61 +45,69 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
  * <p>
- * {@code OracleParserTest}
+ * {@code OracleParserRunner}
  * </p>
  * 
- * @version V0.0 23.06.2013
- * @author Clemens Koza
+ * @version V0.0 04.10.2014
+ * @author SillyFreak
  */
-public class OracleParserTest {
+public class OracleParserRunner {
     private static final List<String> ruleNames = unmodifiableList(asList(OracleParser.ruleNames));
+    private static final int          nThreads  = 8;
     
-    public static void main(String[] args) throws Exception {
-        process(AbilityExtractor.readSer());
+    public static void main(String[] args) throws IOException, InterruptedException {
         
-//        process(parse("Other creatures you control with flying get +0/+1."));
-//        process(parse("Destroy two target artifacts and/or enchantments."));
-    }
-    
-    private static void process(List<Card> content) throws Exception {
+        OracleParserRunner r = new OracleParserRunner(nThreads);
+        Oracle oracle = AbilityExtractor.readSer();
+        
+        long time;
+        time = System.nanoTime();
+        for(Ability ab:oracle.abilities.values())
+            r.submit(ab);
+        r.pool.shutdown();
+        while(!r.pool.awaitTermination(10, TimeUnit.SECONDS));
+        time = System.nanoTime() - time;
+        
+        System.out.printf("%d ms (%d threads), %d abilities%n", time / 1000000, nThreads, oracle.abilities.size());
+        System.out.printf("%.3f ms/ability%n", time * nThreads / oracle.abilities.size() / 1000000d);
+        
+        
         String datetime = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
         new File("reports").mkdirs();
-        try (PrintStream cards = new PrintStream("reports/cards-" + datetime + ".txt");
-                PrintStream abilities = new PrintStream("reports/abilities-" + datetime + ".txt");) {
-            
-            int cSucc = 0, cErr = 0;
+        
+        try (PrintStream abilities = new PrintStream("reports/abilities-" + datetime + ".txt");) {
             int aSucc = 0, aErr = 0;
             
-            StringBuilder sb = new StringBuilder();
-            for(Card c:content) {
-                sb.setLength(0);
-                sb.append(format("  %s%n", c.name));
+            for(Ability a:oracle.abilities.values()) {
+                if(a.error == null) aSucc++;
+                else aErr++;
                 
-                for(Ability a:c.abilities) {
-                    a.num++;
-                    if(a.num == 0) {
-                        process(a);
-                        abilities.printf("%s %s%n", a.error == null? ' ':'x', a.text);
-                        if(a.error == null) aSucc++;
-                        else aErr++;
-                    }
-                    
-                    if(a.error != null) c.success = false;
-                    sb.append(format("%s  %4d: %s%n", a.error == null? ' ':'x', a.num, a.text));
+                abilities.printf("%s %s%n", a.error == null? ' ':'x', a.text);
+            }
+            String aResult = result("unique abilities", aSucc, aSucc + aErr);
+            System.out.println(aResult);
+            abilities.println(aResult);
+        }
+        
+        try (PrintStream cards = new PrintStream("reports/cards-" + datetime + ".txt");) {
+            int cSucc = 0, cErr = 0;
+            
+            for(Card c:oracle.cards) {
+                boolean succ = true;
+                for(AbilityInstance a:c.abilities) {
+                    if(a.ability.error != null) succ = false;
                 }
-                cards.printf("%s %s:%n", c.success? ' ':'x', c.name);
-                if(c.success) cSucc++;
+                if(succ) cSucc++;
                 else cErr++;
                 
-                sb.setCharAt(0, c.success? ' ':'x');
-                System.out.println(sb);
+                cards.printf("%s %s%n", succ? ' ':'x', c.name);
+                for(AbilityInstance a:c.abilities) {
+                    cards.append(format("%s  %4d: %s%n", a.ability.error == null? ' ':'x', a.num, a.ability.text));
+                }
             }
             String cResult = result("cards", cSucc, cSucc + cErr);
             System.out.println(cResult);
             cards.println(cResult);
-            String aResult = result("unique abilities", aSucc, aSucc + aErr);
-            System.out.println(aResult);
-            abilities.println(aResult);
         }
     }
     
@@ -97,14 +115,31 @@ public class OracleParserTest {
         return format("%d of %d %s parsed: %.2f%%", succ, total, type, 100. * succ / total);
     }
     
-    private static void process(Ability ability) {
+    private final ExecutorService pool;
+    
+    public OracleParserRunner(int nThreads) {
+        pool = Executors.newFixedThreadPool(nThreads);
+    }
+    
+    public Future<Ability> submit(final Ability ability) {
+        return pool.submit(new Callable<Ability>() {
+            public Ability call() throws Exception {
+                process(ability);
+                return ability;
+            }
+        });
+    }
+    
+    private static void process(Ability ability) throws RecognitionException {
         try {
             process(ability.text);
         } catch(ParseCancellationException ex) {
             if(ex.getCause() instanceof Exception) ability.error = (Exception) ex.getCause();
             else ability.error = ex;
+            throw ex;
         } catch(RecognitionException ex) {
             ability.error = ex;
+            throw ex;
         }
     }
     
