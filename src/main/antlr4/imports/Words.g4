@@ -702,12 +702,22 @@ tokens {
   Noncreature, //noncreature
   Nonenchantment, //nonenchantment
   Nongreen, //nongreen
+  Noninstant, //noninstant
   Nonland, //nonland
   Nonlegendary, //nonlegendary
+  Nonongoing, //nonongoing
+  Nonphenomenon, //nonphenomenon
+  Nonplane, //nonplane
+  Nonplaneswalker, //nonplaneswalker
   Nonred, //nonred
+  Nonscheme, //nonscheme
   Nonsnow, //nonsnow
+  Nonsorcery, //nonsorcery
   Nontoken, //nontoken
+  Nontribal, //nontribal
+  Nonvanguard, //nonvanguard
   Nonwhite, //nonwhite
+  Nonworld, //nonworld
   Not, //not
   Note, //note
   Noted, //noted
@@ -722,6 +732,7 @@ tokens {
   On, //on
   Once, //once
   One, //one
+  Ongoing, //ongoing
   Only, //only
   Onto, //onto
   Ooze, //ooze
@@ -777,6 +788,7 @@ tokens {
   Phased, //phased
   Phases, //phases
   Phasing, //phasing
+  Phenomenon, //phenomenon
   Phylactery, //phylactery
   Pile, //pile
   Piles, //piles
@@ -791,8 +803,10 @@ tokens {
   Plainscycling, //plainscycling
   Plainswalk, //plainswalk
   Planar, //planar
+  Plane, //plane
   Planeswalk, //planeswalk
   Planeswalker, //planeswalker
+  Planeswalkers, //planeswalkers
   Planeswalks, //planeswalks
   Plant, //plant
   Play, //play
@@ -966,6 +980,7 @@ tokens {
   Soldiers, //soldiers
   Some, //some
   Soot, //soot
+  Sorceries, //sorceries
   Sorcery, //sorcery
   Soulshift, //soulshift
   Source, //source
@@ -1090,6 +1105,7 @@ tokens {
   Trap, //trap
   Treasure, //treasure
   Treefolk, //treefolk
+  Tribal, //tribal
   Trigger, //trigger
   Triggered, //triggered
   Triggers, //triggers
@@ -1132,6 +1148,7 @@ tokens {
   Value, //value
   Vampire, //vampire
   Vampires, //vampires
+  Vanguard, //vanguard
   Vanishing, //vanishing
   Velocity, //velocity
   Verse, //verse
@@ -1188,6 +1205,7 @@ tokens {
   Word, //word
   Words, //words
   Worker, //worker
+  World, //world
   Worm, //worm
   Would, //would
   Wrong, //wrong

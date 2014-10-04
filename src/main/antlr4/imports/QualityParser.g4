@@ -29,20 +29,20 @@ supertypeQuality:
   supertype | nonsupertype;
 
 supertype:
-  Basic | Legendary | /*Ongoing |*/ Snow /*| World*/;
+  Basic | Legendary | Ongoing | Snow | World;
 
 nonsupertype:
-  Nonbasic | Nonlegendary | /*Nonongoing |*/ Nonsnow /*| Nonworld*/;
+  Nonbasic | Nonlegendary | Nonongoing | Nonsnow | Nonworld;
 
 cardtypeQuality:
   cardtype | noncardtype;
 
 cardtype:
   Artifact | Creature | Enchantment | Instant |
-  Land | Planeswalker | Scheme | Sorcery;
-//  Phenomenon Plane Tribal Vanguard
+  Land | Phenomenon | Plane | Planeswalker |
+  Scheme | Sorcery | Tribal | Vanguard;
 
 noncardtype:
-  Nonartifact | Noncreature | Nonenchantment | Nonland;
-//  Noninstant Nonphenomenon Nonplane Nonplaneswalker
-//  Nonscheme Nonsorcery Nontribal Nonvanguard
+  Nonartifact | Noncreature | Nonenchantment | Noninstant |
+  Nonland | Nonphenomenon | Nonplane | Nonplaneswalker |
+  Nonscheme | Nonsorcery | Nontribal | Nonvanguard;

@@ -44,7 +44,7 @@ singularObjectExpression:
 
 pluralObjectNoun:
   Artifacts | Creatures | Enchantments | Instants |
-  Lands | /*Planeswalkers | */ Schemes | /*Sorceries | */
+  Lands | Planeswalkers | Schemes | Sorceries |
   Permanents | Tokens | Sources | Cards | Spells;
 
 pluralObject:

@@ -66,6 +66,11 @@ public class WordsGenerator {
     private static void matchExtras(Set<String> words, StringBuffer sb) {
         matchWords(words, sb, "I We Me Us Myself Yourself Herself Themself", true);
         matchWords(words, sb, "Ourselves Yourselves Themselves My Our Hers Theirs Ours These", true);
+        matchWords(words, sb, "Phenomenon Plane Tribal Vanguard", true);
+        matchWords(words, sb, "Noninstant Nonphenomenon Nonplane Nonplaneswalker", true);
+        matchWords(words, sb, "Nonscheme Nonsorcery Nontribal Nonvanguard", true);
+        matchWords(words, sb, "Planeswalkers Sorceries", true);
+        matchWords(words, sb, "Ongoing World Nonongoing Nonworld", true);
     }
     
     private static void matchWords(Set<String> words, StringBuffer sb, String text, boolean extra) {
