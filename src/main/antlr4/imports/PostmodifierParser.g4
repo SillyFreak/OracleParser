@@ -1,7 +1,11 @@
 parser grammar PostmodifierParser;
 
 postmodifier:
-  controllerModifier;
+  controllerModifier |
+  withKeywordModifier;
 
 controllerModifier:
   (playerSubject Control | player3rdSubject Controls);
+
+withKeywordModifier:
+  With Flying; //TODO
