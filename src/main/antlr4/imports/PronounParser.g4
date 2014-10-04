@@ -5,7 +5,8 @@ determiner_sg:
 	Another | (Up To)? numeral_sg Other? |
 	(Another | (Up To)? numeral_sg Other? |) Target |
 	determiner_sg1_possessive | determiner_sp2_possessive | determiner_sg3_possessive |
-	determiner_sg_demonstrative;
+	determiner_sg_demonstrative |
+	Enchanted | Equipped;
 determiner_pl:
 	Other | All Other? |
 	(Up To)? numeral_pl Other? |
@@ -22,7 +23,7 @@ determiner_pl_demonstrative:	pronoun_pl_demonstrative;
 
 pronoun_sg1_nominative:	I;
 pronoun_sp2_nominative:	You;
-pronoun_sg3_nominative:	He | She | It | They | He Or She;
+pronoun_sg3_nominative:	He | She | It | They | He Or She | SELF;
 pronoun_pl1_nominative:	We;
 pronoun_pl3_nominative:	They;
 pronoun_sg1_oblique:	Me;
