@@ -63,7 +63,7 @@ drawCards:
    player3rdSubject Draws |
    playerSubject Draw
   )
-  (article_sg Card | article_pl Cards);
+  (A Card | numeral_pl Cards);
 
 gainLife:
   (player3rdSubject Gains |

@@ -13,7 +13,3 @@ numberWord_pl:	Two | Three | Four | Five | Six |
 numeral:		numeral_sg | numeral_pl;
 numeral_sg:		numberWord_sg | number_sg;
 numeral_pl:		numberWord_pl | number_pl;
-
-article:		article_sg | article_pl;
-article_sg:		A | An | numeral_sg;
-article_pl:		numeral_pl;
