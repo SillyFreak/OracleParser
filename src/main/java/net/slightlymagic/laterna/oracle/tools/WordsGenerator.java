@@ -28,30 +28,21 @@ import net.slightlymagic.laterna.oracle.grammar.WordMapping;
  * @author SillyFreak
  */
 public class WordsGenerator {
+    private static Pattern word = Pattern.compile("(~'s)|(\\{\\w+(?:/\\w+)*\\})|(\\p{IsLetter}+(?:'\\p{IsLetter}+)*'?)");
+    
     public static void main(String[] args) throws IOException {
         List<Card> content = AbilityExtractor.readSer();
-        Pattern word = Pattern.compile("(~'s)|(\\{\\w+(?:/\\w+)*\\})|(\\p{IsLetter}+(?:'\\p{IsLetter}+)*'?)");
         Set<String> words = new TreeSet<String>();
         StringBuffer sb = new StringBuffer();
         for(Card c:content) {
             for(Ability a:c.abilities) {
                 a.num++;
                 if(a.num == 0 && a.text.length() > 1) {
-                    sb.setLength(0);
-                    Matcher m = word.matcher(a.text.toLowerCase());
-                    while(m.find()) {
-                        m.appendReplacement(sb, "");
-                        if(m.group(3) != null) {
-                            words.add(m.group());
-                        }
-                    }
-                    m.appendTail(sb);
-                    
-                    String rest = sb.toString().replaceAll("[ ,.;:+/0-9~()—\"-]", "");
-                    if(!rest.isEmpty()) System.out.println(rest + " <> " + a.text);
+                    matchWords(words, sb, a.text, false);
                 }
             }
         }
+        matchExtras(words, sb);
         
 //        try (PrintStream out = System.out;) {
         try (PrintStream out = new PrintStream("src/main/antlr4/imports/Words.g4");) {
@@ -70,5 +61,27 @@ public class WordsGenerator {
             }
             out.println("}");
         }
+    }
+    
+    private static void matchExtras(Set<String> words, StringBuffer sb) {
+        matchWords(words, sb, "I We Me Us Myself Yourself Herself Themself", true);
+        matchWords(words, sb, "Ourselves Yourselves Themselves My Our Hers Theirs Ours These", true);
+    }
+    
+    private static void matchWords(Set<String> words, StringBuffer sb, String text, boolean extra) {
+        sb.setLength(0);
+        Matcher m = word.matcher(text.toLowerCase());
+        while(m.find()) {
+            m.appendReplacement(sb, "");
+            if(m.group(3) != null) {
+                if(!words.add(m.group()) && extra) {
+                    System.err.println("duplicate word: " + m.group());
+                }
+            }
+        }
+        m.appendTail(sb);
+        
+        String rest = sb.toString().replaceAll("[ ,.;:+/0-9~()—\"-]", "");
+        if(!rest.isEmpty()) System.out.println(rest + " <> " + text);
     }
 }

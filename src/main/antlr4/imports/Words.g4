@@ -493,6 +493,8 @@ tokens {
   Hellkite, //hellkite
   Helm, //helm
   Her, //her
+  Hers, //hers
+  Herself, //herself
   Hexproof, //hexproof
   Hideaway, //hideaway
   Hides, //hides
@@ -517,6 +519,7 @@ tokens {
   Hunger, //hunger
   Hunt, //hunt
   Husk, //husk
+  I, //i
   Ice, //ice
   Identity, //identity
   If, //if
@@ -633,6 +636,7 @@ tokens {
   Matrix, //matrix
   Maximum, //maximum
   May, //may
+  Me, //me
   Mercenaries, //mercenaries
   Mercenary, //mercenary
   Merfolk, //merfolk
@@ -668,7 +672,9 @@ tokens {
   Muscle, //muscle
   Music, //music
   Must, //must
+  My, //my
   Myr, //myr
+  Myself, //myself
   Name, //name
   Named, //named
   Names, //names
@@ -734,6 +740,9 @@ tokens {
   Other, //other
   Others, //others
   Otherwise, //otherwise
+  Our, //our
+  Ours, //ours
+  Ourselves, //ourselves
   Out, //out
   Outside, //outside
   Over, //over
@@ -1033,10 +1042,14 @@ tokens {
   The, //the
   Theft, //theft
   Their, //their
+  Theirs, //theirs
   Them, //them
+  Themself, //themself
+  Themselves, //themselves
   Then, //then
   There, //there
   There_s, //there's
+  These, //these
   They, //they
   They_re, //they're
   Third, //third
@@ -1114,6 +1127,7 @@ tokens {
   Upkeeps, //upkeeps
   Urami, //urami
   Urza_s, //urza's
+  Us, //us
   Using, //using
   Value, //value
   Vampire, //vampire
@@ -1136,6 +1150,7 @@ tokens {
   Wasn_t, //wasn't
   Wasp, //wasp
   Way, //way
+  We, //we
   Weapon, //weapon
   Web, //web
   Weird, //weird
@@ -1184,6 +1199,8 @@ tokens {
   You_ve, //you've
   Your, //your
   Yours, //yours
+  Yourself, //yourself
+  Yourselves, //yourselves
   Yu, //yu
   Zhang, //zhang
   Zombie, //zombie
