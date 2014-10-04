@@ -11,34 +11,14 @@ player3rdSubject:
 playerSubject:
   nounPhrase_sg1 | nounPhrase_sg2 | nounPhrase_pl;
 
-
-playerExpression:
-  singularPlayerExpression | pluralPlayerExpression;
-
-singularPlayerExpression:
-  nounPhrase_sg;
-
-pluralPlayerExpression:
-  nounPhrase_pl;
-
-
 objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
-
-//TODO check if the parse tree is as desired
-singularObject:
-  nounPhrase_sg;
-
 singularObjectExpression:
-  singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)? postmodifier?;
-
-
-pluralObject:
-  nounPhrase_pl;
+  nounPhrase_sg (((COMMA nounPhrase_sg)+ COMMA)? Or nounPhrase_sg)? postmodifier?;
 
 pluralObjectExpression:
-  pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? postmodifier?;
+  nounPhrase_pl (((COMMA nounPhrase_pl)+ COMMA)? And (SLASH Or)? nounPhrase_pl)? postmodifier?;
 
 
 counterExpression:

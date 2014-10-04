@@ -149,7 +149,7 @@ keyword:
   Morph keywordCost #Morph |
   Multikicker keywordCost #Multikicker |
   Ninjutsu keywordCost #Ninjutsu |
-  singularObject Offering #Offering |
+  noun_sg Offering #Offering |
   Prowl keywordCost #Prowl |
   Recover keywordCost #Recover |
   Reinforce number DASH activationCost PERIOD? #Reinforce |
