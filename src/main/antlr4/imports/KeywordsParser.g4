@@ -1,24 +1,13 @@
 parser grammar KeywordsParser;
 
-fromPluralObjectQuality:
-  From objectQuality |
-  From objectQuality And From objectQuality |
-  From objectQuality COMMA (From objectQuality COMMA)+ And From objectQuality;
-
 fromPluralObject:
-  From pluralObjectQuality? pluralObjectNoun;
+  From premodifier_pl? pluralObjectNoun;
 
 fromPluralObjectList:
   fromPluralObject (((COMMA fromPluralObject)+ COMMA)? And (SLASH Or)? fromPluralObject)?;
 
-
-forPluralObjectQuality:
-  For objectQuality |
-  For objectQuality And For objectQuality |
-  For objectQuality COMMA (For objectQuality COMMA)+ And For objectQuality;
-
 forPluralObject:
-  For pluralObjectQuality? pluralObjectNoun;
+  For premodifier_pl? pluralObjectNoun;
 
 forPluralObjectList:
   forPluralObject (((COMMA forPluralObject)+ COMMA)? And (SLASH Or)? forPluralObject)?;
@@ -136,8 +125,8 @@ keyword:
 //complex evergreen keywords
   Enchant (singularObjectList | Player | Opponent) #Enchant |
   Equip keywordCost #Equip |
-  objectQuality? (Plainswalk | Islandwalk | Swampwalk | Mountainwalk | Forestwalk | Landwalk | Desertwalk) #Landwalk |
-  Protection (fromPluralObjectList | fromPluralObjectQuality) #Protection |
+  premodifier0? (Plainswalk | Islandwalk | Swampwalk | Mountainwalk | Forestwalk | Landwalk | Desertwalk) #Landwalk |
+  Protection (fromPluralObjectList | fromPremodifier_pl) #Protection |
   
   
 //complex block keywords

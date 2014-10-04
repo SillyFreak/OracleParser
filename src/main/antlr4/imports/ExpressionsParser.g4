@@ -2,6 +2,7 @@ parser grammar ExpressionsParser;
 
 import
 	NumeralParser,
+	PremodifierParser,
 	PronounParser;
 
 
@@ -34,7 +35,7 @@ singularObjectNoun:
 
 //TODO check if the parse tree is as desired
 singularObject:
-  singularObjectQuality? singularObjectNoun;
+  premodifier_sg? singularObjectNoun;
 
 singularObjectList:
   singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)? controllerSpecifier?;
@@ -48,7 +49,7 @@ pluralObjectNoun:
   Permanents | Tokens | Sources | Cards | Spells;
 
 pluralObject:
-  Other? pluralObjectQuality? pluralObjectNoun;
+  Other? premodifier_pl? pluralObjectNoun;
 
 pluralObjectList:
   pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? controllerSpecifier?;
