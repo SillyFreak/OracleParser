@@ -47,7 +47,7 @@ public class OracleParserTest {
     public static void main(String[] args) throws Exception {
         process(AbilityExtractor.readSer());
         
-//        process(parse("Creatures you control have flying, first strike, vigilance, trample, haste, and protection from black and from red."));
+//        process(parse("Other creatures you control with flying get +0/+1."));
 //        process(parse("Destroy two target artifacts and/or enchantments."));
     }
     

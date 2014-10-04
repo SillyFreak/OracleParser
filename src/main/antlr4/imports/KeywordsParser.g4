@@ -1,13 +1,13 @@
 parser grammar KeywordsParser;
 
 fromPluralObject:
-  From premodifier_pl? pluralObjectNoun;
+  From premodifier_pl? noun_pl;
 
 fromPluralObjectList:
   fromPluralObject (((COMMA fromPluralObject)+ COMMA)? And (SLASH Or)? fromPluralObject)?;
 
 forPluralObject:
-  For premodifier_pl? pluralObjectNoun;
+  For premodifier_pl? noun_pl;
 
 forPluralObjectList:
   forPluralObject (((COMMA forPluralObject)+ COMMA)? And (SLASH Or)? forPluralObject)?;
@@ -123,7 +123,7 @@ keyword:
   
   
 //complex evergreen keywords
-  Enchant (singularObjectList | Player | Opponent) #Enchant |
+  Enchant singularObjectExpression #Enchant |
   Equip keywordCost #Equip |
   premodifier0? (Plainswalk | Islandwalk | Swampwalk | Mountainwalk | Forestwalk | Landwalk | Desertwalk) #Landwalk |
   Protection (fromPluralObjectList | fromPremodifier_pl) #Protection |
@@ -132,7 +132,7 @@ keyword:
 //complex block keywords
   Affinity forPluralObjectList #Affinity |
   Aura Swap keywordCost #AuraSwap |
-  Bands With Other pluralObjectList #BandsWith |
+  Bands With pluralObjectExpression #BandsWith |
   Buyback keywordCost #Buyback |
   Champion objectExpression #Champion |
   Cumulative Upkeep keywordCost #CumulativeUpkeep |

@@ -20,6 +20,8 @@ noun_pl_possessive:
   Players_ | Opponents_ |
     Permanents_ | Tokens_ | Sources_ | Cards_ | Spells_;
 
+nounPhrase:	nounPhrase_sg | nounPhrase_pl;
+
 nounPhrase_sg:	nounPhrase_sg1 | nounPhrase_sg2 | nounPhrase_sg3;
 nounPhrase_sg1:
   determiner_sg? premodifier_sg?

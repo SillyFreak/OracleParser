@@ -26,32 +26,19 @@ objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
 
-singularObjectNoun:
-  cardtype | Permanent | Token | Source | Card | Spell;
-
 //TODO check if the parse tree is as desired
 singularObject:
   nounPhrase_sg;
 
-singularObjectList:
+singularObjectExpression:
   singularObject (((COMMA singularObject)+ COMMA)? Or singularObject)? postmodifier?;
 
-singularObjectExpression:
-  nounPhrase_sg;
-
-pluralObjectNoun:
-  Artifacts | Creatures | Enchantments | Instants |
-  Lands | Planeswalkers | Schemes | Sorceries |
-  Permanents | Tokens | Sources | Cards | Spells;
 
 pluralObject:
   nounPhrase_pl;
 
-pluralObjectList:
-  pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? postmodifier?;
-
 pluralObjectExpression:
-  nounPhrase_pl;
+  pluralObject (((COMMA pluralObject)+ COMMA)? And (SLASH Or)? pluralObject)? postmodifier?;
 
 
 counterExpression:
