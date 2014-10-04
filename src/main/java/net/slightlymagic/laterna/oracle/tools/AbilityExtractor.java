@@ -19,12 +19,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import net.slightlymagic.laterna.oracle.tools.Oracle.Ability;
+import net.slightlymagic.laterna.oracle.tools.Oracle.AbilityInstance;
+import net.slightlymagic.laterna.oracle.tools.Oracle.Card;
 
 
 /**
@@ -48,11 +48,9 @@ public class AbilityExtractor {
     private static final Pattern rule     = compile("<rule .*?>(.*?)</rule>");
     
     public static void main(String[] args) throws Exception {
-        List<Card> cards;
+        Oracle oracle = new Oracle();
         
         try (BufferedReader r = new BufferedReader(new FileReader(cardsXml));) {
-            cards = new LinkedList<Card>();
-            Map<String, Ability> abilities = new HashMap<String, Ability>();
             Card current = null;
             String cardname = null;
             
@@ -64,7 +62,7 @@ public class AbilityExtractor {
                     s = s.replaceAll(quote("&apos;"), "'");
                     s = s.replaceAll(quote("&quot;"), "\"");
                     s = s.replaceAll(quote("&amp;"), "&");
-                    cards.add(current = new Card(s));
+                    oracle.cards.add(current = new Card(s));
                     
                     //TODO the first variant has many false positives
                     //this is the most twisted one: "Tuktuk the Explorer"
@@ -87,27 +85,26 @@ public class AbilityExtractor {
                     
                     s = s.replaceAll(cardname, "~");
                     
-                    Ability ab = abilities.get(s);
-                    if(ab == null) abilities.put(s, ab = new Ability(s));
+                    Ability ab = oracle.abilities.get(s);
+                    if(ab == null) oracle.abilities.put(s, ab = new Ability(s));
                     
-                    current.addAbility(ab);
+                    current.abilities.add(new AbilityInstance(ab));
                     
                 }
             }
         }
-        writeSer(new File(cardsSer), cards);
-        writeTxt(new File(cardsTxt), cards);
+        writeSer(new File(cardsSer), oracle);
+        writeTxt(new File(cardsTxt), oracle);
     }
     
-    public static List<Card> readSer() throws IOException {
+    public static Oracle readSer() throws IOException {
         return readSer(new File(cardsSer));
     }
     
-    @SuppressWarnings("unchecked")
-    private static List<Card> readSer(File file) throws IOException {
+    private static Oracle readSer(File file) throws IOException {
         try {
             ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
-            List<Card> content = (List<Card>) is.readObject();
+            Oracle content = (Oracle) is.readObject();
             is.close();
             return content;
         } catch(ClassNotFoundException ex) {
@@ -115,21 +112,21 @@ public class AbilityExtractor {
         }
     }
     
-    private static void writeSer(File file, List<Card> content) throws IOException {
+    private static void writeSer(File file, Oracle content) throws IOException {
         file.getParentFile().mkdirs();
         ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(file));
         os.writeObject(content);
         os.close();
     }
     
-    private static void writeTxt(File file, List<Card> content) throws IOException {
+    private static void writeTxt(File file, Oracle content) throws IOException {
         file.getParentFile().mkdirs();
         BufferedWriter w = new BufferedWriter(new FileWriter(file));
-        for(Card c:content) {
+        for(Card c:content.cards) {
             w.write(c.name + ":");
             w.newLine();
-            for(Ability ab:c.abilities) {
-                w.write(++ab.num + " " + ab.text);
+            for(AbilityInstance ab:c.abilities) {
+                w.write(ab.num + " " + ab.ability.text);
                 w.newLine();
             }
         }
