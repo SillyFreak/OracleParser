@@ -1,8 +1,8 @@
 parser grammar ExpressionsParser;
 
 import
-	NounPhraseParser,
-	NumeralParser;
+	NumeralParser,
+	PronounParser;
 
 
 player3rdSubject:
