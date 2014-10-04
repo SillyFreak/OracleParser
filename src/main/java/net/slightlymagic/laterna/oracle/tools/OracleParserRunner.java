@@ -100,10 +100,10 @@ public class OracleParserRunner {
                 if(succ) cSucc++;
                 else cErr++;
                 
-                cards.printf("%s %s%n", succ? ' ':'x', c.name);
-                for(AbilityInstance a:c.abilities) {
-                    cards.append(format("%s  %4d: %s%n", a.ability.error == null? ' ':'x', a.num, a.ability.text));
-                }
+                cards.printf("%s %s:%n", succ? ' ':'x', c.name);
+//                for(AbilityInstance a:c.abilities) {
+//                    cards.append(format("%s  %4d: %s%n", a.ability.error == null? ' ':'x', a.num, a.ability.text));
+//                }
             }
             String cResult = result("cards", cSucc, cSucc + cErr);
             System.out.println(cResult);
