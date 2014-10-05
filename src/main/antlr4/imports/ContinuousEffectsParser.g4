@@ -17,5 +17,5 @@ pumpEffect_keyword:
   );
 
 pumpEffect:
-  objectExpression pumpEffect_keyword |
-  objectExpression pumpEffect_pt (And pumpEffect_keyword)?;
+  nounPhrase pumpEffect_keyword |
+  nounPhrase pumpEffect_pt (And pumpEffect_keyword)?;

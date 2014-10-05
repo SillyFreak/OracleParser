@@ -42,21 +42,21 @@ counter:
    subject_sg3 Counters |
    subject_other Counter
   )
-  objectExpression;
+  nounPhrase;
 
 destroyPermanents:
   (Destroy |
    subject_sg3 Destroys |
    subject_other Destroy
   )
-  objectExpression;
+  nounPhrase;
 
 discardCards:
   (Discard |
    subject_sg3 Discards |
    subject_other Discard
   )
-  objectExpression;
+  nounPhrase;
 
 drawCards:
   (Draw |
@@ -94,22 +94,22 @@ putCounter:
    subject_sg3 Puts |
    subject_other Put
   )
-  counterExpression On objectExpression;
+  nounPhrase On nounPhrase;
 
 removeCounter:
   (Remove |
    /*subject_sg3 Removes |*/
    subject_other Remove
   )
-  counterExpression From objectExpression;
+  nounPhrase From nounPhrase;
 
 returnToHand:
   (Return |
    subject_sg3 Returns |
    subject_other Return
   )
-  (singularObjectExpression To Its Owner_s Hand |
-   pluralObjectExpression To Their Owners_ Hands
+  (nounPhrase_sg To Its Owner_s Hand |
+   nounPhrase_pl To Their Owners_ Hands
   );
 
 sacrificePermanents:
@@ -117,18 +117,18 @@ sacrificePermanents:
    subject_sg3 Sacrifices |
    subject_other Sacrifice
   )
-  objectExpression;
+  nounPhrase;
 
 tap:
   (Tap |
    subject_sg3 Taps |
    subject_other Tap
   )
-  objectExpression;
+  nounPhrase;
 
 untap:
   (Untap |
    subject_sg3 Untaps |
    subject_other Untap
   )
-  objectExpression;
+  nounPhrase;

@@ -123,7 +123,7 @@ keyword:
   
   
 //complex evergreen keywords
-  Enchant singularObjectExpression #Enchant |
+  Enchant nounPhrase_sg #Enchant |
   Equip keywordCost #Equip |
   premodifier0? (Plainswalk | Islandwalk | Swampwalk | Mountainwalk | Forestwalk | Landwalk | Desertwalk) #Landwalk |
   Protection (fromPluralObjectList | fromPremodifier_pl) #Protection |
@@ -132,9 +132,9 @@ keyword:
 //complex block keywords
   Affinity forPluralObjectList #Affinity |
   Aura Swap keywordCost #AuraSwap |
-  Bands With pluralObjectExpression #BandsWith |
+  Bands With nounPhrase_pl #BandsWith |
   Buyback keywordCost #Buyback |
-  Champion objectExpression #Champion |
+  Champion nounPhrase #Champion |
   Cumulative Upkeep keywordCost #CumulativeUpkeep |
   Cycling keywordCost #Cycling |
   Echo keywordCost #Echo |

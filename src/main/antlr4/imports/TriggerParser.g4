@@ -6,10 +6,10 @@ trigger:
   phaseTrigger;
 
 etbTrigger:
-  (When | Whenever) singularObjectExpression Enters The Battlefield;
+  (When | Whenever) nounPhrase_sg Enters The Battlefield;
 
 ltbTrigger:
-  (When | Whenever) singularObjectExpression Leaves The Battlefield;
+  (When | Whenever) nounPhrase_sg Leaves The Battlefield;
 
 phaseOrStep:
   Upkeep #Upkeep |
