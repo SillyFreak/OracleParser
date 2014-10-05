@@ -8,7 +8,7 @@ import
 noun_sg:
   Player | Opponent |
   cardtype | Permanent | Token | Source | Card | Spell |
-  counterType? Counter;
+  counterType? Counter | Life;
 noun_pl:
   Players | Opponents |
   Artifacts | Creatures | Enchantments | Instants |

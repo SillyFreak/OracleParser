@@ -50,7 +50,9 @@ dealDamage:
    subject_sg3 Deals |
    subject_other Deal
   )
-  numeral Damage To nounPhrase;
+  (numeral Damage To nounPhrase |
+   Damage To nounPhrase Equal To (The Number Of)? nounPhrase
+  );
 
 destroyPermanents:
   (Destroy |
