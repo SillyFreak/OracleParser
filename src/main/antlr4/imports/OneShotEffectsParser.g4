@@ -19,6 +19,7 @@ choose:
 oneShotEffect0:
   addMana |
   counter |
+  dealDamage |
   destroyPermanents |
   discardCards |
   drawCards |
@@ -43,6 +44,13 @@ counter:
    subject_other Counter
   )
   nounPhrase;
+
+dealDamage:
+  (Deal |
+   subject_sg3 Deals |
+   subject_other Deal
+  )
+  numeral Damage To nounPhrase;
 
 destroyPermanents:
   (Destroy |
