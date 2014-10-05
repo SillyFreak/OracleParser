@@ -15,10 +15,10 @@ objectExpression:
   singularObjectExpression | pluralObjectExpression;
 
 singularObjectExpression:
-  nounPhrase_sg (((COMMA nounPhrase_sg)+ COMMA)? Or nounPhrase_sg)? postmodifier?;
+  nounPhrase_sg;
 
 pluralObjectExpression:
-  nounPhrase_pl (((COMMA nounPhrase_pl)+ COMMA)? And (SLASH Or)? nounPhrase_pl)? postmodifier?;
+  nounPhrase_pl;
 
 counterExpression:
   nounPhrase;

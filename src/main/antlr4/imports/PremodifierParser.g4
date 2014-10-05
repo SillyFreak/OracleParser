@@ -2,6 +2,7 @@ parser grammar PremodifierParser;
 
 import QualityParser;
 
+premodifier: premodifier_sg | premodifier_pl;
 premodifier_sg:
   premodifier0 |
   premodifier0 Or premodifier0 |

@@ -25,43 +25,67 @@ noun_pl_possessive:
 nounPhrase:	nounPhrase_sg | nounPhrase_pl;
 
 nounPhrase_sg:
-  determiner_sg? premodifier_sg?
-  (pronoun_sg | noun_sg | noun_sg_possessive)
+  (nounPhrase_compound |
+   determiner_sg? premodifier_sg?
+   (pronoun_sg | noun_sg | noun_sg_possessive)
+  )
   postmodifier?;
 
 nounPhrase_sg1:
-  determiner_sg? premodifier_sg?
-  (pronoun_sg1 | noun_sg | noun_sg_possessive)
+  (nounPhrase_compound |
+   determiner_sg? premodifier_sg?
+   (pronoun_sg1 | noun_sg | noun_sg_possessive)
+  )
   postmodifier?;
 
 nounPhrase_sg2:
-  determiner_sg? premodifier_sg?
-  (pronoun_sg2 | noun_sg | noun_sg_possessive)
+  (nounPhrase_compound |
+   determiner_sg? premodifier_sg?
+   (pronoun_sg2 | noun_sg | noun_sg_possessive)
+  )
   postmodifier?;
 
 nounPhrase_sg3:
-  determiner_sg? premodifier_sg?
-  (pronoun_sg3 | noun_sg | noun_sg_possessive)
+  (nounPhrase_compound |
+   determiner_sg? premodifier_sg?
+   (pronoun_sg3 | noun_sg | noun_sg_possessive)
+  )
   postmodifier?;
 
 
 nounPhrase_pl:
-  determiner_pl? premodifier_pl?
-  (pronoun_pl | noun_pl | noun_pl_possessive)
+  (nounPhrase_compound |
+   determiner_pl? premodifier_pl?
+   (pronoun_pl | noun_pl | noun_pl_possessive)
+  )
   postmodifier?;
 
 nounPhrase_pl1:
-  determiner_pl? premodifier_pl?
-  (pronoun_pl1 | noun_pl | noun_pl_possessive)
+  (nounPhrase_compound |
+   determiner_pl? premodifier_pl?
+   (pronoun_pl1 | noun_pl | noun_pl_possessive)
+  )
   postmodifier?;
 
 nounPhrase_pl2:
-  determiner_pl? premodifier_pl?
-  (pronoun_pl2 | noun_pl | noun_pl_possessive)
+  (nounPhrase_compound |
+   determiner_pl? premodifier_pl?
+   (pronoun_pl2 | noun_pl | noun_pl_possessive)
+  )
   postmodifier?;
 
 nounPhrase_pl3:
-  determiner_pl? premodifier_pl?
-  (pronoun_pl3 | noun_pl | noun_pl_possessive)
+  (nounPhrase_compound |
+   determiner_pl? premodifier_pl?
+   (pronoun_pl3 | noun_pl | noun_pl_possessive)
+  )
   postmodifier?;
-  
+
+nounPhrase_compound:
+  (nounPhrase_compound0 (And | Or | And SLASH Or) nounPhrase_compound0 |
+   nounPhrase_compound0 COMMA (nounPhrase_compound0 COMMA)+ (And | Or | And SLASH Or) nounPhrase_compound0
+  );
+
+nounPhrase_compound0:
+  determiner? premodifier?
+  (pronoun_sg | pronoun_pl | noun_sg | noun_pl | noun_sg_possessive | noun_pl_possessive);

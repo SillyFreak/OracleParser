@@ -1,5 +1,6 @@
 parser grammar NounPhraseParser;
 
+determiner: determiner_sg | determiner_pl;
 determiner_sg:
 	A | An | Each Other? |
 	Another | (Up To)? numeral_sg Other? |
